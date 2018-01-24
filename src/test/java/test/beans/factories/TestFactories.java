@@ -1,6 +1,5 @@
 package test.beans.factories;
 
-import beans.factories.configuration.ConfigurationFactory;
 import beans.factories.configuration.ConfigurationFactoryProduct1;
 import beans.factories.configuration.ConfigurationFactoryProduct2;
 import beans.factories.xml.XMLFactory;
@@ -43,19 +42,26 @@ public class TestFactories extends AbstractTestSpringContext {
     @Test
     public void testConfigurationFactories() {
 
-        // verify the factory is created
-        ConfigurationFactory configurationFactory = context.getBean(ConfigurationFactory.class);
-        Assert.assertNotNull(configurationFactory);
-
         // verify products are created
         // no need to use directly the factory
-        ConfigurationFactoryProduct1 configurationFactoryProduct1 = context.getBean(ConfigurationFactoryProduct1.class);
-        Assert.assertNotNull(configurationFactoryProduct1);
-        ConfigurationFactoryProduct2 configurationFactoryProduct2 = context.getBean(ConfigurationFactoryProduct2.class);
-        Assert.assertNotNull(configurationFactoryProduct2);
+        ConfigurationFactoryProduct1 product1_1 = context.getBean(ConfigurationFactoryProduct1.class);
+        Assert.assertNotNull(product1_1);
+        Assert.assertFalse(product1_1.createdByConstructor);
 
-        Assert.assertTrue(configurationFactory.isProduce1Called());
-        Assert.assertTrue(configurationFactory.isProduce2Called());
+        ConfigurationFactoryProduct1 product1_2 = context.getBean(ConfigurationFactoryProduct1.class);
+        Assert.assertNotNull(product1_2);
+        Assert.assertFalse(product1_2.createdByConstructor);
 
+        Assert.assertNotEquals(product1_1, product1_2);
+
+        ConfigurationFactoryProduct2 product2_1 = context.getBean(ConfigurationFactoryProduct2.class);
+        Assert.assertNotNull(product2_1);
+        Assert.assertFalse(product2_1.createdByConstructor);
+
+        ConfigurationFactoryProduct2 product2_2 = context.getBean(ConfigurationFactoryProduct2.class);
+        Assert.assertNotNull(product2_2);
+        Assert.assertFalse(product2_2.createdByConstructor);
+
+        Assert.assertEquals(product2_1, product2_2);
     }
 }

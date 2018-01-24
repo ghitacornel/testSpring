@@ -13,10 +13,11 @@ import javax.annotation.PreDestroy;
 @Component
 public class Singleton {
 
+    public boolean isInitCalled = false;
+
     @PostConstruct
     private void init() {
-        // XXX check console for this message
-        System.out.println(this + " was initialized");
+        isInitCalled = true;
     }
 
     @PreDestroy

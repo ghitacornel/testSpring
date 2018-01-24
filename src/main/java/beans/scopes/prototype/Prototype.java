@@ -13,10 +13,11 @@ import javax.annotation.PreDestroy;
 @Scope("prototype")
 public class Prototype {
 
+    public boolean isInitCalled = false;
+
     @PostConstruct
     private void init() {
-        // XXX check console for this message
-        System.out.println(this + " was initialized");
+        isInitCalled = true;
     }
 
     @PreDestroy

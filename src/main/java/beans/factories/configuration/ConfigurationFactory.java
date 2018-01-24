@@ -2,6 +2,7 @@ package beans.factories.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 /**
  * this is a spring bean
@@ -10,27 +11,20 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ConfigurationFactory {
 
-    // fields used only for test purpose
-    private boolean produce1Called = false;
-    private boolean produce2Called = false;
-
     @Bean
+    @Scope("prototype")
     public ConfigurationFactoryProduct1 produce1() {
-        produce1Called = true;
-        return new ConfigurationFactoryProduct1();
+        ConfigurationFactoryProduct1 product1 = new ConfigurationFactoryProduct1();
+        product1.createdByConstructor = false;
+        return product1;
     }
 
     @Bean
+    @Scope("singleton")
     public ConfigurationFactoryProduct2 produce2() {
-        produce2Called = true;
-        return new ConfigurationFactoryProduct2();
+        ConfigurationFactoryProduct2 product2 = new ConfigurationFactoryProduct2();
+        product2.createdByConstructor = false;
+        return product2;
     }
 
-    public boolean isProduce1Called() {
-        return produce1Called;
-    }
-
-    public boolean isProduce2Called() {
-        return produce2Called;
-    }
 }
