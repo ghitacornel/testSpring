@@ -15,6 +15,7 @@ public class TestSingleton extends AbstractTestSpringContext {
         SingletonBean bean2 = context.getBean(SingletonBean.class);
         Assert.assertNotNull(bean2);
 
+        // for different requests same bean instance is returned
         Assert.assertSame(bean1, bean2);
     }
 

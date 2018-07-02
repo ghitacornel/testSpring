@@ -15,6 +15,7 @@ public class TestPrototype extends AbstractTestSpringContext {
         PrototypeBean bean2 = context.getBean(PrototypeBean.class);
         Assert.assertNotNull(bean2);
 
+        // for different requests different bean instances are returned
         Assert.assertNotSame(bean1, bean2);
 
     }
