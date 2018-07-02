@@ -9,18 +9,18 @@ public class ConfigurationFactory {
 
     @Bean
     @Scope("prototype")
-    public ConfigurationFactoryProduct1 produceProduct1() {
-        ConfigurationFactoryProduct1 product1 = new ConfigurationFactoryProduct1();
-        product1.createdBy = "produceProduct1";
-        return product1;
+    public ConfigurationFactoryProductPrototype producePrototype() {
+        ConfigurationFactoryProductPrototype product = new ConfigurationFactoryProductPrototype();
+        product.createdBy = "producePrototype";
+        return product;
     }
 
     @Bean
-    @Scope("singleton")
-    public ConfigurationFactoryProduct2 produceProduct2() {
-        ConfigurationFactoryProduct2 product2 = new ConfigurationFactoryProduct2();
-        product2.createdBy = "produceProduct2";
-        return product2;
+    @Scope("singleton")// this is redundant
+    public ConfigurationFactoryProductSingleton produceSingleton() {
+        ConfigurationFactoryProductSingleton product = new ConfigurationFactoryProductSingleton();
+        product.createdBy = "produceSingleton";
+        return product;
     }
 
 }

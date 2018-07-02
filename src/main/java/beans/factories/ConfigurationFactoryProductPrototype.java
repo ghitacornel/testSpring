@@ -1,6 +1,6 @@
 package beans.factories;
 
-public class ConfigurationFactoryProduct2 {
+public class ConfigurationFactoryProductPrototype {
 
     public String createdBy = "CONSTRUCTOR";
 
