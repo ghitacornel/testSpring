@@ -3,9 +3,6 @@ package beans.aop;
 import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
-/**
- * Created by Cornel on 10.12.2015.
- */
 @Component
 @Aspect
 public class AspectService {

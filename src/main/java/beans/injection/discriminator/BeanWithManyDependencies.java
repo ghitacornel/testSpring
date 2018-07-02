@@ -4,8 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * a bean with dependencies. note that private dependencies are resolved even without setters.
- * Created by Cornel on 30.10.2015.
+ * a bean with dependencies. note that private dependencies are resolved even without provided setters.
  */
 @Component
 public class BeanWithManyDependencies {
