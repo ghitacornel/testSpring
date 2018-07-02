@@ -2,7 +2,6 @@ package beans.factories.xml;
 
 /**
  * no need to be public
- * Created by Cornel on 10.12.2015.
  */
 public class XMLFactory {
 

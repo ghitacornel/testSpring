@@ -14,3 +14,14 @@ see beans.scopes.singleton
 see javax.annotation.PostConstruct / javax.annotation.PreDestroy
 see beans.lifecycle.prototype
 see beans.lifecycle.singleton
+
+4. A BEAN CONTAINER OFFERS FACTORY DESIGN PATTERN SUPPORT
+see beans.factories.configuration
+see beans.factories.xml
+see org.springframework.context.annotation.Configuration / org.springframework.context.annotation.Bean
+
+A BEAN CONTAINER OFFERS DEPENDENCY INJECTION
+
+A BEAN CONTAINER OFFERS ASPECT ORIENTED PROGRAMMING SUPPORT
+
+A BEAN CONTAINER OFFERS EVENT BASED PROGRAMMING SUPPORT
