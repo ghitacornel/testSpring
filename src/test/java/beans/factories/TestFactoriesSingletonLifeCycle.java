@@ -1,15 +1,15 @@
-package beans.lifecycle.singleton;
+package beans.factories;
 
 import org.junit.Assert;
 import org.junit.Test;
 import template.AbstractTestSpringContext;
 
-public class TestSingleton extends AbstractTestSpringContext {
+public class TestFactoriesSingletonLifeCycle extends AbstractTestSpringContext {
 
     @Test
-    public void testLifecycle() {
+    public void testLifecycleSingleton() {
 
-        SingletonWithLifeCycleBean bean = context.getBean(SingletonWithLifeCycleBean.class);
+        ConfigurationFactoryProductSingleton bean = context.getBean(ConfigurationFactoryProductSingleton.class);
         Assert.assertNotNull(bean);
         Assert.assertTrue(bean.isPostConstructCalled);
         Assert.assertFalse(bean.isPreDestroyCalled);
@@ -21,5 +21,4 @@ public class TestSingleton extends AbstractTestSpringContext {
         Assert.assertTrue(bean.isPreDestroyCalled);
 
     }
-
 }

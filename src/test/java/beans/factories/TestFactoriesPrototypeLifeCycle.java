@@ -1,15 +1,15 @@
-package beans.lifecycle.prototype;
+package beans.factories;
 
 import org.junit.Assert;
 import org.junit.Test;
 import template.AbstractTestSpringContext;
 
-public class TestPrototype extends AbstractTestSpringContext {
-    
-    @Test
-    public void testLifecycle() {
+public class TestFactoriesPrototypeLifeCycle extends AbstractTestSpringContext {
 
-        PrototypeWithLifeCycleBean bean = context.getBean(PrototypeWithLifeCycleBean.class);
+    @Test
+    public void testLifecyclePrototype() {
+
+        ConfigurationFactoryProductPrototype bean = context.getBean(ConfigurationFactoryProductPrototype.class);
         Assert.assertNotNull(bean);
         Assert.assertTrue(bean.isPostConstructCalled);
         Assert.assertFalse(bean.isPreDestroyCalled);
