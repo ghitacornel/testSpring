@@ -1,4 +1,4 @@
-package beans.factories.configuration;
+package beans.factories;
 
 import org.junit.Assert;
 import org.junit.Test;

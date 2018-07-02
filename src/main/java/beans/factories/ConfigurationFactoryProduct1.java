@@ -1,4 +1,4 @@
-package beans.factories.configuration;
+package beans.factories;
 
 public class ConfigurationFactoryProduct1 {
 
