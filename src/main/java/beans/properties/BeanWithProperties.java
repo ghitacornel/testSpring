@@ -3,8 +3,7 @@ package beans.properties;
 import org.springframework.stereotype.Component;
 
 /**
- * bean with custom properties. this bean definition is overwritten in xml
- * Created by Cornel on 10.12.2015.
+ * bean with injected custom properties
  */
 @Component
 public class BeanWithProperties {
