@@ -1,4 +1,4 @@
-package beans.properties;
+package beans.properties.xml;
 
 /**
  * bean with injected properties taken from XML<br>

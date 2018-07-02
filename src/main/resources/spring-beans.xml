@@ -14,7 +14,7 @@ http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
     <context:component-scan base-package="beans.*"/>
     <aop:aspectj-autoproxy/>
 
-    <bean class="beans.properties.BeanWithPropertiesInjectedFromXML">
+    <bean class="beans.properties.xml.BeanWithPropertiesInjectedFromXML">
         <constructor-arg>
             <value>customConstructorValue</value>
         </constructor-arg>

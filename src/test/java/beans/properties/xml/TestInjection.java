@@ -1,10 +1,10 @@
-package beans.properties;
+package beans.properties.xml;
 
 import org.junit.Assert;
 import org.junit.Test;
 import template.AbstractTestSpringContext;
 
-public class TestProperties extends AbstractTestSpringContext {
+public class TestInjection extends AbstractTestSpringContext {
 
     @Test
     public void testInjectionOfPropertiesFromXML() {

@@ -6,7 +6,6 @@ import beans.injection.discriminator.BeanWithManyDependencies;
 import beans.injection.environment.BeanWithEnvironment;
 import beans.injection.factories.BeanWithFactoryDependency;
 import beans.injection.factories.FactoryOfDependency;
-import beans.injection.properties.BeanWithValues;
 import org.junit.Assert;
 import org.junit.Test;
 import template.AbstractTestSpringContext;
@@ -45,14 +44,6 @@ public class TestInjection extends AbstractTestSpringContext {
         Assert.assertNotNull(bean.getContext());
         Assert.assertNotNull(bean.getContext().getBean(BeanWithContextInjected.class));
         Assert.assertTrue(bean == bean.getContext().getBean(BeanWithContextInjected.class));
-    }
-
-    @Test
-    public void testInjectionOfProperties() {
-        BeanWithValues bean = context.getBean(BeanWithValues.class);
-        Assert.assertNotNull(bean);
-        Assert.assertEquals("bla bla bla", bean.getCustomValue());
-        Assert.assertEquals("tra la la", bean.getCustomSecondValue());
     }
 
     @Test

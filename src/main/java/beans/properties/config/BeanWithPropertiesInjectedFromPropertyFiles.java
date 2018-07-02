@@ -1,10 +1,10 @@
-package beans.injection.properties;
+package beans.properties.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
-public class BeanWithValues {
+public class BeanWithPropertiesInjectedFromPropertyFiles {
 
     @Value("${my.value}")
     private String customValue;
