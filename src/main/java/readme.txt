@@ -9,8 +9,11 @@ PREREQUISITES
 - THREAD POOL design pattern ( https://en.wikipedia.org/wiki/Thread_pool )
 - OBSERVER    design pattern ( https://en.wikipedia.org/wiki/Observer_pattern )
 
+- Java Reflection
+
 - java.lang.ThreadLocal
 - java.lang.reflect.Proxy
+
 - Javassist ( http://www.javassist.org/ )
 - CGLib ( https://github.com/cglib/cglib )
 

@@ -7,10 +7,10 @@ import template.AbstractTestSpringContext;
 public class TestProperties extends AbstractTestSpringContext {
 
     @Test
-    public void testProperties() {
-        BeanWithProperties bean = context.getBean(BeanWithProperties.class);
+    public void testInjectionOfPropertiesFromXML() {
+        BeanWithPropertiesInjectedFromXML bean = context.getBean(BeanWithPropertiesInjectedFromXML.class);
         Assert.assertNotNull(bean);
-        Assert.assertTrue(bean.getCustomProperty1().equals("customProperty1Value"));
-        Assert.assertTrue(bean.getCustomProperty2() == 3);
+        Assert.assertEquals("customConstructorValue", bean.getConstructorProperty());
+        Assert.assertEquals(2, bean.getSimpleProperty());
     }
 }

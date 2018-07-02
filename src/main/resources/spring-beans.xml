@@ -12,14 +12,14 @@ http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
 
     <context:annotation-config/>
     <context:component-scan base-package="beans.*"/>
-    <aop:aspectj-autoproxy />
+    <aop:aspectj-autoproxy/>
 
-    <bean class="beans.properties.BeanWithProperties" id="beanWithProperties">
+    <bean class="beans.properties.BeanWithPropertiesInjectedFromXML">
         <constructor-arg>
-            <value>3</value>
+            <value>customConstructorValue</value>
         </constructor-arg>
-        <property name="customProperty1">
-            <value>customProperty1Value</value>
+        <property name="simpleProperty">
+            <value>2</value>
         </property>
     </bean>
 
