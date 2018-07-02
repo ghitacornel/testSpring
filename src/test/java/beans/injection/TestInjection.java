@@ -3,7 +3,6 @@ package beans.injection;
 import beans.injection.context.BeanWithContextInjected;
 import beans.injection.direct.BeanWithDifferentTypesOfDependencies;
 import beans.injection.discriminator.BeanWithManyDependencies;
-import beans.injection.environment.BeanWithEnvironment;
 import beans.injection.factories.BeanWithFactoryDependency;
 import beans.injection.factories.FactoryOfDependency;
 import org.junit.Assert;
@@ -43,14 +42,7 @@ public class TestInjection extends AbstractTestSpringContext {
         Assert.assertNotNull(bean);
         Assert.assertNotNull(bean.getContext());
         Assert.assertNotNull(bean.getContext().getBean(BeanWithContextInjected.class));
-        Assert.assertTrue(bean == bean.getContext().getBean(BeanWithContextInjected.class));
+        Assert.assertSame(bean, bean.getContext().getBean(BeanWithContextInjected.class));
     }
 
-    @Test
-    public void testInjectionOfEnvironment() {
-        BeanWithEnvironment bean = context.getBean(BeanWithEnvironment.class);
-        Assert.assertNotNull(bean);
-        Assert.assertNotNull(bean.getEnvironment());
-        Assert.assertTrue(bean.getEnvironment().getActiveProfiles().length == 0);
-    }
 }
