@@ -10,7 +10,7 @@ public class TestInjection extends AbstractTestSpringContext {
     public void testInjectionOfPropertiesFromXML() {
         BeanWithPropertiesInjectedFromXML bean = context.getBean(BeanWithPropertiesInjectedFromXML.class);
         Assert.assertNotNull(bean);
-        Assert.assertEquals("customConstructorValue", bean.getConstructorProperty());
+        Assert.assertEquals("customConstructorProvidedValue", bean.getConstructorProperty());
         Assert.assertEquals(2, bean.getSimpleProperty());
     }
 }

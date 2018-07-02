@@ -2,7 +2,7 @@ package beans.properties.xml;
 
 /**
  * bean with injected properties taken from XML<br>
- * the bean definition is provided via XML where the bean properties are set<br>
+ * the bean definition is provided via XML where the bean properties are also set<br>
  */
 public class BeanWithPropertiesInjectedFromXML {
 

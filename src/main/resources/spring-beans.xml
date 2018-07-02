@@ -16,7 +16,7 @@ http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
 
     <bean class="beans.properties.xml.BeanWithPropertiesInjectedFromXML">
         <constructor-arg>
-            <value>customConstructorValue</value>
+            <value>customConstructorProvidedValue</value>
         </constructor-arg>
         <property name="simpleProperty">
             <value>2</value>
