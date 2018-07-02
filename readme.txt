@@ -20,13 +20,14 @@ PREREQUISITES
 1. A BEAN CONTAINER ACTS AS A REPOSITORY OF BEANS
 
 see beans.names
+
 a bean lookup can be performed using a bean predefined name
 a bean lookup can be performed using a bean default provided name/names
 a bean lookup can be performed using a bean class
 a bean lookup can be performed using a bean parent class
 a bean lookup can fail if multiple bean types qualify as result, for further search refinement qualifiers are required
 
-2. A BEAN CONTAINER OFFERS [OUT OF THE BOX]/[PREDEFINED] bean types
+2. A BEAN CONTAINER OFFERS [OUT OF THE BOX]/[PREDEFINED] BEAN TYPES
 
 see EJB javax.ejb.Stateless
 see EJB javax.ejb.Stateful
@@ -70,6 +71,8 @@ see beans.factories.configuration
 A BEAN CONTAINER OFFERS INJECTION OF PROPERTIES
 
 see beans.properties
+
+property values can be taken from XML files, PROPERTIES files or even ENVIRONMENT system variables
 
 A BEAN CONTAINER OFFERS DEPENDENCY INJECTION
 
