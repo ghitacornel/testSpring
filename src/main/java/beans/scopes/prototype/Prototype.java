@@ -7,7 +7,8 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 /**
- * all beans are singletons by default hence the extra scope specified here
+ * all Spring beans are singletons by default<br>
+ * In order to mark them as prototype the extra @Scope marker is used
  */
 @Component
 @Scope("prototype")

@@ -2,7 +2,7 @@ package beans.properties;
 
 import org.junit.Assert;
 import org.junit.Test;
-import test.AbstractTestSpringContext;
+import template.AbstractTestSpringContext;
 
 public class TestProperties extends AbstractTestSpringContext {
 

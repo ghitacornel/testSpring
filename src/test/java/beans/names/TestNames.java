@@ -2,7 +2,7 @@ package beans.names;
 
 import org.junit.Assert;
 import org.junit.Test;
-import test.AbstractTestSpringContext;
+import template.AbstractTestSpringContext;
 
 public class TestNames extends AbstractTestSpringContext {
 

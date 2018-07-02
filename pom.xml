@@ -28,7 +28,7 @@
                         <version>2.21.0</version>
                     </dependency>
                 </dependencies>
-                <!-- need to specify to maven to include all test classes otherwise those
+                <!-- need to specify to maven to include all template classes otherwise those
                     not respecting naming convention will not be run -->
                 <configuration>
                     <includes>

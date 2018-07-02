@@ -1,4 +1,4 @@
-package test;
+package template;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;

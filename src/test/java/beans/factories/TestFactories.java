@@ -7,7 +7,7 @@ import beans.factories.xml.XMLFactoryProduct1;
 import beans.factories.xml.XMLFactoryProduct2;
 import org.junit.Assert;
 import org.junit.Test;
-import test.AbstractTestSpringContext;
+import template.AbstractTestSpringContext;
 
 public class TestFactories extends AbstractTestSpringContext {
 

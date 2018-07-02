@@ -20,7 +20,7 @@ public class BeanWithDifferentTypesOfDependencies {
     // only constructor parameter provided and used, no getters or setters provided or used
     final private ConstructorDependency constructorDependency;
 
-    // used only for test purpose
+    // used only for template purpose
     private boolean setterUsedInInjection = false;
     private boolean constructorUsedInInjection = false;
 

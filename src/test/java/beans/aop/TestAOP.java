@@ -3,7 +3,7 @@ package beans.aop;
 import beans.aop.beans.BeanWithAspect;
 import org.junit.Assert;
 import org.junit.Test;
-import test.AbstractTestSpringContext;
+import template.AbstractTestSpringContext;
 
 public class TestAOP extends AbstractTestSpringContext {
 

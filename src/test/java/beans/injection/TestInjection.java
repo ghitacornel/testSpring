@@ -9,7 +9,7 @@ import beans.injection.factories.FactoryOfDependency;
 import beans.injection.properties.BeanWithValues;
 import org.junit.Assert;
 import org.junit.Test;
-import test.AbstractTestSpringContext;
+import template.AbstractTestSpringContext;
 
 public class TestInjection extends AbstractTestSpringContext {
 

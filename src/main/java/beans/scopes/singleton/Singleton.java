@@ -6,9 +6,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 /**
- * all beans are singletons by default
- *
- * @author Cornel
+ * all Spring beans are singletons by default
  */
 @Component
 public class Singleton {
