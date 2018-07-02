@@ -1,3 +1,4 @@
-1. lifecycle : create + destroy => specify listeners
+1. lifecycle : create + destroy => specify listeners => constructor CDI listeners and many others
+
 2. bean type/scope : http request / http session / application / conversation scope
 
