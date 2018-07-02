@@ -72,7 +72,9 @@ A BEAN CONTAINER OFFERS INJECTION OF PROPERTIES
 
 see beans.properties
 
-property values can be taken from XML files, PROPERTIES files or even ENVIRONMENT system variables
+property values can be provided via XML files
+property values can be provided via PROPERTIES files
+property values can be provided via ENVIRONMENT variables
 
 A BEAN CONTAINER OFFERS DEPENDENCY INJECTION
 
