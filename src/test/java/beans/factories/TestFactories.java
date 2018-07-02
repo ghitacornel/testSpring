@@ -20,7 +20,7 @@ public class TestFactories extends AbstractTestSpringContext {
     }
 
     @Test
-    public void testConfigurationFactories() {
+    public void testFactoryProducts() {
 
         ConfigurationFactoryProductPrototype product_type_1_instance_1 = context.getBean(ConfigurationFactoryProductPrototype.class);
         Assert.assertNotNull(product_type_1_instance_1);
