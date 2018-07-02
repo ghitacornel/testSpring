@@ -18,7 +18,7 @@ public abstract class AbstractTestSpringContext {
 
     @AfterClass
     public static void after() {
-        context.destroy();
+        context.close();
     }
 
 }
