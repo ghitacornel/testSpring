@@ -1,6 +1,5 @@
-package test.beans.scopes.prototype;
+package beans.scopes.prototype;
 
-import beans.scopes.prototype.Prototype;
 import org.junit.Assert;
 import org.junit.Test;
 import test.AbstractTestSpringContext;

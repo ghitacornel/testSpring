@@ -1,6 +1,5 @@
-package test.beans.scopes.singleton;
+package beans.scopes.singleton;
 
-import beans.scopes.singleton.Singleton;
 import org.junit.Assert;
 import org.junit.Test;
 import test.AbstractTestSpringContext;

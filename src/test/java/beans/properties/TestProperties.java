@@ -1,6 +1,5 @@
-package test.beans.properties;
+package beans.properties;
 
-import beans.properties.BeanWithProperties;
 import org.junit.Assert;
 import org.junit.Test;
 import test.AbstractTestSpringContext;

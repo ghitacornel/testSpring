@@ -1,4 +1,4 @@
-package test.beans.factories;
+package beans.factories;
 
 import beans.factories.configuration.ConfigurationFactoryProduct1;
 import beans.factories.configuration.ConfigurationFactoryProduct2;

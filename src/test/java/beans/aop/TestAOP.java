@@ -1,4 +1,4 @@
-package test.beans.aop;
+package beans.aop;
 
 import beans.aop.beans.BeanWithAspect;
 import org.junit.Assert;

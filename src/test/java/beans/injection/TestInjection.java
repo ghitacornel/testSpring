@@ -1,4 +1,4 @@
-package test.beans.injection;
+package beans.injection;
 
 import beans.injection.context.BeanWithContextInjected;
 import beans.injection.direct.BeanWithDifferentTypesOfDependencies;
