@@ -9,14 +9,13 @@ public class TestPrototype extends AbstractTestSpringContext {
     @Test
     public void testPrototype() {
 
-        Prototype prototype1 = context.getBean(Prototype.class);
-        Assert.assertNotNull(prototype1);
-        Assert.assertTrue(prototype1.isInitCalled);
+        PrototypeBean bean1 = context.getBean(PrototypeBean.class);
+        Assert.assertNotNull(bean1);
 
-        Prototype prototype2 = context.getBean(Prototype.class);
-        Assert.assertNotNull(prototype2);
-        Assert.assertTrue(prototype2.isInitCalled);
+        PrototypeBean bean2 = context.getBean(PrototypeBean.class);
+        Assert.assertNotNull(bean2);
 
-        Assert.assertTrue(prototype1 != prototype2);
+        Assert.assertNotSame(bean1, bean2);
+
     }
 }

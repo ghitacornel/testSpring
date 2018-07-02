@@ -9,15 +9,13 @@ public class TestSingleton extends AbstractTestSpringContext {
     @Test
     public void testSingleton() {
 
-        Singleton singleton1 = context.getBean(Singleton.class);
-        Assert.assertNotNull(singleton1);
-        Assert.assertTrue(singleton1.isInitCalled);
+        SingletonBean bean1 = context.getBean(SingletonBean.class);
+        Assert.assertNotNull(bean1);
 
-        Singleton singleton2 = context.getBean(Singleton.class);
-        Assert.assertNotNull(singleton2);
-        Assert.assertTrue(singleton2.isInitCalled);
+        SingletonBean bean2 = context.getBean(SingletonBean.class);
+        Assert.assertNotNull(bean2);
 
-        Assert.assertTrue(singleton1 == singleton2);
+        Assert.assertSame(bean1, bean2);
     }
 
 }

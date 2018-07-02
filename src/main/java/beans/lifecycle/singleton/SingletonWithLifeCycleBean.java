@@ -1,4 +1,4 @@
-package beans.scopes.singleton;
+package beans.lifecycle.singleton;
 
 import org.springframework.stereotype.Component;
 
@@ -9,7 +9,7 @@ import javax.annotation.PreDestroy;
  * all Spring beans are singletons by default
  */
 @Component
-public class Singleton {
+public class SingletonWithLifeCycleBean {
 
     public boolean isInitCalled = false;
 
