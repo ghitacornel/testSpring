@@ -156,6 +156,17 @@ see
 
 see package beans.injection.*
 
-A BEAN CONTAINER OFFERS ASPECT ORIENTED PROGRAMMING SUPPORT
+A BEAN CONTAINER CAN OFFER ASPECT ORIENTED PROGRAMMING ( AOP ) SUPPORT
+
+see ( https://en.wikipedia.org/wiki/Aspect-oriented_programming )
+
+AOP is possible through the usage of PROXY design pattern over container managed beans.
+AOP allows for defining interceptor mechanisms. Interceptor mechanisms are a separate part of JEE specifications.
+Each container can offer AOP through specific mechanisms and with specific flavors.
+
+AOP allows adding support for declarative logging or declarative security.
+Combined it with usage of ThreadLocal and support for declarative business transactions can be defined.
+
+see package beans.aop.*
 
 A BEAN CONTAINER OFFERS EVENT BASED PROGRAMMING SUPPORT

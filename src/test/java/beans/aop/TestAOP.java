@@ -1,6 +1,6 @@
 package beans.aop;
 
-import beans.aop.beans.BeanWithAspect;
+import beans.aop.beans.BeanAffectedByAspect;
 import org.junit.Assert;
 import org.junit.Test;
 import template.AbstractTestSpringContext;
@@ -9,15 +9,21 @@ public class TestAOP extends AbstractTestSpringContext {
 
     @Test
     public void test_AOP_OK() {
-        BeanWithAspect bean = context.getBean(BeanWithAspect.class);
+        BeanAffectedByAspect bean = context.getBean(BeanAffectedByAspect.class);
         Assert.assertNotNull(bean);
         System.out.println(bean.doIt());
+
+        // CHECK THE CONSOLE
+
     }
 
     @Test(expected = RuntimeException.class)
     public void test_AOP_FAIL() {
-        BeanWithAspect bean = context.getBean(BeanWithAspect.class);
+        BeanAffectedByAspect bean = context.getBean(BeanAffectedByAspect.class);
         Assert.assertNotNull(bean);
         System.out.println(bean.fail());
+
+        // CHECK THE CONSOLE
+
     }
 }
