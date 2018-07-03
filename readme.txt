@@ -163,9 +163,11 @@ see ( https://en.wikipedia.org/wiki/Aspect-oriented_programming )
 AOP is possible through the usage of PROXY design pattern over container managed beans.
 AOP allows for defining interceptor mechanisms. Interceptor mechanisms are a separate part of JEE specifications.
 Each container can offer AOP through specific mechanisms and with specific flavors.
-
 AOP allows adding support for declarative logging or declarative security.
 Combined it with usage of ThreadLocal and support for declarative business transactions can be defined.
+
+For order of execution when multiple aspects are triggered read container provided documentation.
+Some containers provide AOP support but also make heavy use of AOP (e.g. EJB).
 
 see package beans.aop.*
 
