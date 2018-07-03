@@ -4,18 +4,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * a bean with dependencies. note that private dependencies are resolved even without provided setters.
+ * A bean with many dependencies<br>
+ * Note that private dependencies are resolved even without provided setters<br>
+ * Note that some dependencies cannot be resolved without a discriminator
  */
 @Component
 public class BeanWithManyDependencies {
 
-    @Type1
+    @Type1Qualifier// specific discriminator is used for this dependency
     @Autowired
-    private Dependency dependency1;
+    private CommonDependencyType dependency1;
 
-    @Type2
+    @Type2Qualifier// specific discriminator is used for this dependency
     @Autowired
-    private Dependency dependency2;
+    private CommonDependencyType dependency2;
 
     public boolean areDependenciesResolved() {
 

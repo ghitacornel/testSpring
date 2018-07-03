@@ -7,5 +7,5 @@ import java.lang.annotation.RetentionPolicy;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Qualifier
-public @interface Type2 {
+public @interface Type1Qualifier {
 }

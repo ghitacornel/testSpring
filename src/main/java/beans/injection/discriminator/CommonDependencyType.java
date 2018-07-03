@@ -1,6 +1,6 @@
 package beans.injection.discriminator;
 
-public interface Dependency {
+public interface CommonDependencyType {
 
     default String execute() {
         return this + " executed";
