@@ -117,6 +117,7 @@ that the specific marked field / setter / constructor is to be used in the proce
 
     Generally it is accepted that container will resolve all bean dependencies before invoking any kind of @PostConstruct provided method.
     Combinations of such injection methods (constructor/setter/field) [are]/[are not] allowed depending on the container.
+    Order of resolving dependency injection is container specific.
     Combinations of declared in class or in an external configuration file of such dependencies [are]/[are not] allowed depending on the container.
     Usually containers expect from their managed beans to define a no private no arguments constructor.
 
@@ -134,6 +135,12 @@ that the specific marked field / setter / constructor is to be used in the proce
     No assumption is to be made on if a provided by the container dependency is a proxy or an actual class instance.
     NO assumption is to be made on how such proxies are created or when.
     Always read container provided documentation regarding this aspects.
+
+    Some containers allow injection of values into managed beans methods parameters.
+    For example REST controllers with injected HTTP requests or sessions.
+
+    Never assume that two different containers can easily be integrated.
+    Always read documentation. Sometimes dedicated documentation is provided on this aspect.
 
 see ( http://www.baeldung.com/spring-annotations-resource-inject-autowire )or google it for ( @Autowired vs @Inject vs @Resource )
 
