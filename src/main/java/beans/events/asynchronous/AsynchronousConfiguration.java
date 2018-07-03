@@ -15,9 +15,9 @@ public class AsynchronousConfiguration implements AsyncConfigurer {
     public ThreadPoolTaskExecutor getAsyncExecutor() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
         executor.setWaitForTasksToCompleteOnShutdown(true);// mandatory for test purpose
-        executor.setCorePoolSize(2);
+        executor.setCorePoolSize(2);// at least 2 threads for 2 expected events
         executor.setMaxPoolSize(10);
-        executor.setQueueCapacity(1);
+        executor.setQueueCapacity(1);// force it to 1 in order to force 1 thread per event processing
         executor.setThreadNamePrefix("MyExecutor-");
         executor.initialize();
         return executor;

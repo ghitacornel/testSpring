@@ -22,6 +22,7 @@ public class TestEvents extends AbstractTestSpringContext {
 
         // force wait in order to allow processing of messages
         // XXX sleep here does not guarantee test will pass since processing of messages might take longer
+        // XXX usually we get lucky
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -46,6 +47,8 @@ public class TestEvents extends AbstractTestSpringContext {
         Assert.assertTrue(messages.contains("event message 1"));
         Assert.assertTrue(messages.contains("event message 2"));
 
+        // XXX we expect also that 2 different threads processed the 2 different events
+        // XXX usually we get lucky
         Assert.assertEquals(2, listener.getProcessingThreads().size());
 
     }

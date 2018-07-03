@@ -21,6 +21,13 @@ public class AsynchronousEventListener {
     public void processEvent(CustomSpringEvent event) {
         processedEvents.add(event);
         processingThreads.add(Thread.currentThread());
+
+        // ensure processing takes longer hence a second thread will process the next message
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            throw new RuntimeException("can't sleep", e);
+        }
     }
 
     final private List<CustomSpringEvent> processedEvents = new ArrayList<>();
