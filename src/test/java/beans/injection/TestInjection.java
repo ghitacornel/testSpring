@@ -1,10 +1,10 @@
 package beans.injection;
 
-import beans.injection.context.BeanWithContextInjected;
+import beans.injection.context.BeanWithBeanContainerReferenceInjected;
 import beans.injection.direct.BeanWithDifferentTypesOfDependencies;
 import beans.injection.discriminator.BeanWithManyDependencies;
-import beans.injection.factories.BeanWithFactoryDependency;
-import beans.injection.factories.FactoryOfDependency;
+import beans.injection.factories.BeanWithAFactoryProducedDependency;
+import beans.injection.factories.FactoryOfProductsUsedInDependencyInjections;
 import org.junit.Assert;
 import org.junit.Test;
 import template.AbstractTestSpringContext;
@@ -19,30 +19,30 @@ public class TestInjection extends AbstractTestSpringContext {
     }
 
     @Test
-    public void testInjectionWithDiscriminator() {
+    public void testInjectionWithInjectionDiscriminators() {
         BeanWithManyDependencies bean = context.getBean(BeanWithManyDependencies.class);
         Assert.assertNotNull(bean);
         Assert.assertTrue(bean.areDependenciesResolved());
     }
 
     @Test
-    public void testInjectionBuildFromFactory() {
-        BeanWithFactoryDependency beanWithFactoryDependency = context.getBean(BeanWithFactoryDependency.class);
-        Assert.assertNotNull(beanWithFactoryDependency);
-        Assert.assertNotNull(beanWithFactoryDependency.getFactoryProduct());
+    public void testInjectionWithAProvidedByAFactoryDependency() {
+        BeanWithAFactoryProducedDependency bean = context.getBean(BeanWithAFactoryProducedDependency.class);
+        Assert.assertNotNull(bean);
+        Assert.assertNotNull(bean.getFactoryProduct());
 
-        FactoryOfDependency factoryOfDependency = context.getBean(FactoryOfDependency.class);
-        Assert.assertNotNull(factoryOfDependency);
-        Assert.assertTrue(factoryOfDependency.isUsed());
+        FactoryOfProductsUsedInDependencyInjections factory = context.getBean(FactoryOfProductsUsedInDependencyInjections.class);
+        Assert.assertNotNull(factory);
+        Assert.assertTrue(factory.isUsed());
     }
 
     @Test
-    public void testInjectionOfContext() {
-        BeanWithContextInjected bean = context.getBean(BeanWithContextInjected.class);
+    public void testInjectionOfBeanContainerReference() {
+        BeanWithBeanContainerReferenceInjected bean = context.getBean(BeanWithBeanContainerReferenceInjected.class);
         Assert.assertNotNull(bean);
         Assert.assertNotNull(bean.getContext());
-        Assert.assertNotNull(bean.getContext().getBean(BeanWithContextInjected.class));
-        Assert.assertSame(bean, bean.getContext().getBean(BeanWithContextInjected.class));
+        Assert.assertNotNull(bean.getContext().getBean(BeanWithBeanContainerReferenceInjected.class));
+        Assert.assertSame(bean, bean.getContext().getBean(BeanWithBeanContainerReferenceInjected.class));
     }
 
 }
