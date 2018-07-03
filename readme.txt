@@ -81,7 +81,7 @@ examples
 
 see package beans.factories
 
-A BEAN CONTAINER CAN PROVIDE INJECTION OF PROPERTIES
+5. A BEAN CONTAINER CAN PROVIDE INJECTION OF PROPERTIES
 
 Property values can be provided via XML files.
 Property values can be provided via PROPERTIES files.
@@ -92,7 +92,7 @@ examples
 
 see packages beans.properties.*
 
-A BEAN CONTAINER PROVIDES DEPENDENCY INJECTION
+6.A BEAN CONTAINER PROVIDES DEPENDENCY INJECTION
 
 bean dependencies can be resolved by the container by the means of :
 - dependency request markers
@@ -156,7 +156,7 @@ see
 
 see package beans.injection.*
 
-A BEAN CONTAINER CAN PROVIDE ASPECT ORIENTED PROGRAMMING ( AOP ) SUPPORT
+7. A BEAN CONTAINER CAN PROVIDE ASPECT ORIENTED PROGRAMMING ( AOP ) SUPPORT
 
 see ( https://en.wikipedia.org/wiki/Aspect-oriented_programming )
 
@@ -171,7 +171,7 @@ Some containers provide AOP support but also make heavy use of AOP (e.g. EJB).
 
 see package beans.aop.*
 
-A BEAN CONTAINER CAN PROVIDE EVENT BASED PROGRAMMING SUPPORT
+8. A BEAN CONTAINER CAN PROVIDE EVENT BASED PROGRAMMING SUPPORT
 
 Note that this behavior is a lightweight alternative to message queues.
 Note that not all containers offer such functionality.
@@ -182,6 +182,6 @@ producers or consumers or manner of communication ( synchronous / asynchronous +
 
 see beans.events.*
 
-A BEAN CONTAINER CAN PROVIDE TIME BASED EVENT GENERATION
+9. A BEAN CONTAINER CAN PROVIDE TIME BASED EVENT GENERATION
 
 see beans.timers.*
