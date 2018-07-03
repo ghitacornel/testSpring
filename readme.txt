@@ -131,6 +131,9 @@ that the specific marked field / setter / constructor is to be used in the proce
     Self injecting beans are generally allowed by all containers.
     Usually this behavior is accepted combined with transactional aspects.
 
+    Injecting different types of beans into other different types of beans must be treated carefully.
+    It can lead to "unexpected" behaviors. Read container documentation.
+
     Container injected bean dependencies can be actual bean instances or proxies.
     No assumption is to be made on if a provided by the container dependency is a proxy or an actual class instance.
     NO assumption is to be made on how such proxies are created or when.
