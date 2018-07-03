@@ -185,6 +185,8 @@ producers or consumers or manner of communication ( synchronous / asynchronous +
 
 see beans.events.*
 
-9. A BEAN CONTAINER CAN PROVIDE TIME BASED EVENT GENERATION
+9. A BEAN CONTAINER CAN PROVIDE TIME BASED EVENT GENERATION SUPPORT
+
+This kind of support can come in different flavours and can be used through different API.
 
 see beans.timers.*
