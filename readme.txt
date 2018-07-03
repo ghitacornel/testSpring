@@ -171,4 +171,10 @@ Some containers provide AOP support but also make heavy use of AOP (e.g. EJB).
 
 see package beans.aop.*
 
-A BEAN CONTAINER OFFERS EVENT BASED PROGRAMMING SUPPORT
+A BEAN CONTAINER CAN OFFER EVENT BASED PROGRAMMING SUPPORT
+
+Note that this behavior is a lightweight alternative to message queues.
+Note that not all containers offer such functionality.
+Note that this functionality is offered by the container through a specific container API.
+
+A BEAN CONTAINER CAN PROVIDE TIME BASED EVENT GENERATION
