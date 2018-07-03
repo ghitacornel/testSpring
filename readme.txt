@@ -180,4 +180,8 @@ Note that this functionality is offered by the container through a specific cont
 Using event based approach can lead to less maintainable code, specially when control is lost over defined
 producers or consumers or manner of communication ( synchronous / asynchronous + transactional / non transactional )
 
+see beans.events.*
+
 A BEAN CONTAINER CAN PROVIDE TIME BASED EVENT GENERATION
+
+see beans.timers.*
