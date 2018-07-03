@@ -34,7 +34,7 @@ examples
 - EJB container automatically registers beans in a JNDI register under well defined and multiple names.
 - Spring container automatically register beans by name.
 
-2. A BEAN CONTAINER OFFERS [OUT OF THE BOX]/[PREDEFINED] BEAN TYPES
+2. A BEAN CONTAINER PROVIDES [OUT OF THE BOX]/[PREDEFINED] BEAN TYPES
 
 Each container usually offers its very specific bean types.
 Even if different containers use the same bean type name, they might use the same name for different scopes and even
@@ -62,7 +62,7 @@ examples
 
 see packages beans.scopes.*
 
-3. A BEAN CONTAINER DEFINES SPECIFIC LIFECYCLE FOR EACH PROVIDED BEAN TYPE AND OFFERS LIFECYCLE CONTROLLING METHODS
+3. A BEAN CONTAINER DEFINES SPECIFIC LIFECYCLE FOR EACH PROVIDED BEAN TYPE AND PROVIDES LIFECYCLE CONTROLLING METHODS
 
 Each container usually defines a very specific lifecycle for each provided bean type.
 Yet a common pattern occurred. See javax.annotation.PostConstruct and javax.annotation.PreDestroy.
@@ -70,7 +70,7 @@ Some container specific lifecycle control methods are javax.ejb.Startup or org.s
 
 see packages beans.lifecycle.*
 
-4. A BEAN CONTAINER OFFERS FACTORY DESIGN PATTERN SUPPORT
+4. A BEAN CONTAINER PROVIDES FACTORY DESIGN PATTERN SUPPORT
 
 examples
 - Spring org.springframework.context.annotation.Configuration
@@ -81,7 +81,7 @@ examples
 
 see package beans.factories
 
-A BEAN CONTAINER CAN OFFER INJECTION OF PROPERTIES
+A BEAN CONTAINER CAN PROVIDE INJECTION OF PROPERTIES
 
 Property values can be provided via XML files.
 Property values can be provided via PROPERTIES files.
@@ -92,7 +92,7 @@ examples
 
 see packages beans.properties.*
 
-A BEAN CONTAINER OFFERS DEPENDENCY INJECTION
+A BEAN CONTAINER PROVIDES DEPENDENCY INJECTION
 
 bean dependencies can be resolved by the container by the means of :
 - dependency request markers
@@ -156,7 +156,7 @@ see
 
 see package beans.injection.*
 
-A BEAN CONTAINER CAN OFFER ASPECT ORIENTED PROGRAMMING ( AOP ) SUPPORT
+A BEAN CONTAINER CAN PROVIDE ASPECT ORIENTED PROGRAMMING ( AOP ) SUPPORT
 
 see ( https://en.wikipedia.org/wiki/Aspect-oriented_programming )
 
@@ -171,7 +171,7 @@ Some containers provide AOP support but also make heavy use of AOP (e.g. EJB).
 
 see package beans.aop.*
 
-A BEAN CONTAINER CAN OFFER EVENT BASED PROGRAMMING SUPPORT
+A BEAN CONTAINER CAN PROVIDE EVENT BASED PROGRAMMING SUPPORT
 
 Note that this behavior is a lightweight alternative to message queues.
 Note that not all containers offer such functionality.
