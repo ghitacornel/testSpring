@@ -177,4 +177,7 @@ Note that this behavior is a lightweight alternative to message queues.
 Note that not all containers offer such functionality.
 Note that this functionality is offered by the container through a specific container API.
 
+Using event based approach can lead to less maintainable code, specially when control is lost over defined
+producers or consumers or manner of communication ( synchronous / asynchronous + transactional / non transactional )
+
 A BEAN CONTAINER CAN PROVIDE TIME BASED EVENT GENERATION

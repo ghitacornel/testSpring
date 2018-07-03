@@ -1,5 +1,6 @@
-package beans.events;
+package beans.events.synchronous;
 
+import beans.events.CustomSpringEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
@@ -7,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class EventListener implements ApplicationListener<CustomSpringEvent> {
+public class SynchronousEventListener implements ApplicationListener<CustomSpringEvent> {
 
     @Override
     public void onApplicationEvent(CustomSpringEvent event) {

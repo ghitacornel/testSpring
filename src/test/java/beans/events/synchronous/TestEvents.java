@@ -1,5 +1,6 @@
-package beans.events;
+package beans.events.synchronous;
 
+import beans.events.EventPublisher;
 import org.junit.Assert;
 import org.junit.Test;
 import template.AbstractTestSpringContext;
@@ -14,7 +15,7 @@ public class TestEvents extends AbstractTestSpringContext {
         publisher.publishEvent("event message 1");
         publisher.publishEvent("event message 2");
 
-        EventListener listener = context.getBean(EventListener.class);
+        SynchronousEventListener listener = context.getBean(SynchronousEventListener.class);
         Assert.assertNotNull(listener);
         Assert.assertEquals(2, listener.getProcessedEvents().size());
         Assert.assertEquals("event message 1", listener.getProcessedEvents().get(0).getMessage());

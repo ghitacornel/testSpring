@@ -11,7 +11,7 @@ public class EventPublisher {
     private ApplicationEventPublisher containerPublisher;
 
     public void publishEvent(String message) {
-        System.out.println("Publishing custom event. ");
+        System.out.println("Publishing custom event with message : " + message);
         CustomSpringEvent customSpringEvent = new CustomSpringEvent(this, message);
         containerPublisher.publishEvent(customSpringEvent);
     }
