@@ -5,5 +5,5 @@ import org.springframework.web.context.annotation.RequestScope;
 
 @Component
 @RequestScope// ensure no instance is available for injection
-public class IISource implements IISourceInterface {
+public class DirectSource {
 }

@@ -1,4 +1,4 @@
 package beans.injection.interfaceimplementation;
 
-public interface IISourceInterface {
+public interface SourceInterface {
 }

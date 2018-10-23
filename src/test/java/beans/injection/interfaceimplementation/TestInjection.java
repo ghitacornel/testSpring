@@ -17,13 +17,13 @@ public class TestInjection extends AbstractTestSpringContext {
         System.out.println(target.directSource.getClass());
         System.out.println(target.sourceInterface.getClass());
 
-        Assert.assertNotEquals(IIDirectSource.class, target.directSource.getClass());
-        Assert.assertTrue(IIDirectSource.class.isAssignableFrom(target.directSource.getClass()));
+        Assert.assertNotEquals(DirectSource.class, target.directSource.getClass());
+        Assert.assertTrue(DirectSource.class.isAssignableFrom(target.directSource.getClass()));
 
-        Assert.assertNotEquals(IISource.class, target.sourceInterface.getClass());
-        Assert.assertNotEquals(IISourceInterface.class, target.sourceInterface.getClass());
-        Assert.assertTrue(IISource.class.isAssignableFrom(target.sourceInterface.getClass()));
-        Assert.assertTrue(IISourceInterface.class.isAssignableFrom(target.sourceInterface.getClass()));
+        Assert.assertNotEquals(Source.class, target.sourceInterface.getClass());
+        Assert.assertNotEquals(SourceInterface.class, target.sourceInterface.getClass());
+        Assert.assertTrue(Source.class.isAssignableFrom(target.sourceInterface.getClass()));
+        Assert.assertTrue(SourceInterface.class.isAssignableFrom(target.sourceInterface.getClass()));
 
     }
 

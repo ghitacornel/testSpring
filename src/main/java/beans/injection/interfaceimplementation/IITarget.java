@@ -8,9 +8,9 @@ import org.springframework.stereotype.Component;
 public class IITarget {
 
     @Autowired
-    IIDirectSource directSource;
+    DirectSource directSource;
 
     @Autowired
-    IISourceInterface sourceInterface;
+    SourceInterface sourceInterface;
 
 }
