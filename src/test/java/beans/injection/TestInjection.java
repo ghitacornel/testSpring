@@ -4,7 +4,7 @@ import beans.injection.context.BeanWithBeanContainerReferenceInjected;
 import beans.injection.direct.BeanWithDifferentTypesOfDependencies;
 import beans.injection.discriminator.BeanWithManyDependencies;
 import beans.injection.factories.BeanWithAFactoryProducedDependency;
-import beans.injection.factories.FactoryOfProductsUsedInDependencyInjections;
+import beans.injection.factories.FactoryOfProducts;
 import org.junit.Assert;
 import org.junit.Test;
 import template.AbstractTestSpringContext;
@@ -30,8 +30,10 @@ public class TestInjection extends AbstractTestSpringContext {
         BeanWithAFactoryProducedDependency bean = context.getBean(BeanWithAFactoryProducedDependency.class);
         Assert.assertNotNull(bean);
         Assert.assertNotNull(bean.getFactoryProduct());
+        Assert.assertTrue(bean.getFactoryProduct().postConstruct);
+        Assert.assertNotNull(bean.getFactoryProduct().factoryProductDependency);
 
-        FactoryOfProductsUsedInDependencyInjections factory = context.getBean(FactoryOfProductsUsedInDependencyInjections.class);
+        FactoryOfProducts factory = context.getBean(FactoryOfProducts.class);
         Assert.assertNotNull(factory);
         Assert.assertTrue(factory.isUsed());
     }

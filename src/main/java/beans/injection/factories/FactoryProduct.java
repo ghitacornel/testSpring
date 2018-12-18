@@ -1,7 +1,18 @@
 package beans.injection.factories;
 
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
 
-@Component
+import javax.annotation.PostConstruct;
+
 public class FactoryProduct {
+
+    @Autowired
+    public FactoryProductDependency factoryProductDependency;
+
+    public boolean postConstruct;
+
+    @PostConstruct
+    private void postConstruct() {
+        postConstruct = true;
+    }
 }
