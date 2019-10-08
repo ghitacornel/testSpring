@@ -7,7 +7,7 @@ import template.AbstractTestSpringContext;
 public class TestInjection extends AbstractTestSpringContext {
 
     @Test
-    public void testInjection() {
+    public void testInjectionInterfaceImplementation() {
         IITarget target = context.getBean(IITarget.class);
 
         Assert.assertNotNull(target);
