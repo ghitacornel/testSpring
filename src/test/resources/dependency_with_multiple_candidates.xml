@@ -4,6 +4,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean class="beans.injection.notresolved.ClassWithNoResolvableDependency"/>
+    <bean class="beans.injection.multiplecandidates.ClassWithMultipleCandidatesForDependencyInjection"/>
+    <bean class="beans.injection.multiplecandidates.Candidate1"/>
+    <bean class="beans.injection.multiplecandidates.Candidate2"/>
 
 </beans>
