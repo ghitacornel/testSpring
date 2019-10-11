@@ -1,4 +1,4 @@
-package beans.injection;
+package beans.injection.direct;
 
 import beans.injection.context.BeanWithBeanContainerReferenceInjected;
 import beans.injection.direct.BeanWithDifferentTypesOfDependencies;
