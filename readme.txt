@@ -81,18 +81,7 @@ examples
 
 see package beans.factories
 
-5. A BEAN CONTAINER CAN PROVIDE INJECTION OF PROPERTIES
-
-Property values can be provided via XML files.
-Property values can be provided via PROPERTIES files.
-Property values can be provided via ENVIRONMENT variables.
-
-examples
-- Spring org.springframework.beans.factory.annotation.Value
-
-see packages beans.properties.*
-
-6.A BEAN CONTAINER PROVIDES DEPENDENCY INJECTION
+5.A BEAN CONTAINER PROVIDES DEPENDENCY INJECTION
 
 bean dependencies can be resolved by the container by the means of :
 - dependency request markers
@@ -158,6 +147,17 @@ see
 - CDI javax.inject.Qualifier
 
 see package beans.injection.*
+
+6. A BEAN CONTAINER CAN PROVIDE INJECTION OF PROPERTIES
+
+Property values can be provided via XML files.
+Property values can be provided via PROPERTIES files.
+Property values can be provided via ENVIRONMENT variables.
+
+examples
+- Spring org.springframework.beans.factory.annotation.Value
+
+see packages beans.properties.*
 
 7. A BEAN CONTAINER CAN PROVIDE ASPECT ORIENTED PROGRAMMING ( AOP ) SUPPORT
 
