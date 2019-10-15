@@ -28,6 +28,7 @@ Usually :
 - A bean lookup can be performed using any bean class extended parent classes.
 - A bean lookup can fail if multiple bean types qualify as result, for further search refinement qualifiers are required.
 Yet not all containers allow such behaviors, or allow them to a certain degree.
++ side effect => bean definition override : see qualifiers, profiles
 
 see package beans.names
 
@@ -66,8 +67,14 @@ see packages beans.scopes.*
 3. A BEAN CONTAINER DEFINES SPECIFIC LIFECYCLE FOR EACH PROVIDED BEAN TYPE AND PROVIDES LIFECYCLE CONTROLLING METHODS
 
 Each container usually defines a very specific lifecycle for each provided bean type.
-Yet a common pattern occurred. See javax.annotation.PostConstruct and javax.annotation.PreDestroy.
-Some container specific lifecycle control methods are javax.ejb.Startup or org.springframework.context.annotation.Lazy.
+Yet a common pattern occurred.
+See :
+- javax.annotation.PostConstruct
+- javax.annotation.PreDestroy
+
+Some container specific lifecycle control methods :
+- javax.ejb.Startup
+- org.springframework.context.annotation.Lazy
 
 see packages beans.lifecycle.*
 
