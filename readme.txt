@@ -13,10 +13,9 @@ PREREQUISITES
 + https://en.wikipedia.org/wiki/Multitier_architecture
 
 - Java Reflection
-
 - java.lang.ThreadLocal
-- java.lang.reflect.Proxy ( for old school interface-implementation approach )
 
+- java.lang.reflect.Proxy ( for old school interface-implementation approach )
 - Javassist ( http://www.javassist.org/ )
 - CGLib ( https://github.com/cglib/cglib )
 
