@@ -1,3 +1,5 @@
+SPRING => or the "man in the middle", "the glue that binds"
+
 PREREQUISITES
 
 - software    design patterns ( https://en.wikipedia.org/wiki/Software_design_pattern )
@@ -193,3 +195,11 @@ see beans.events.*
 This kind of support can come in different flavours and can be used through different API.
 
 see beans.timers.*
+
+AND AT LAST
+easy to write tests with "no mocks",
+well at least with bean definition override one can mock any part of the application
+see :
+@org.junit.runner.RunWith
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = {"classpath:spring-beans.xml"})
