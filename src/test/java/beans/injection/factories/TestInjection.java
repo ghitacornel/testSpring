@@ -12,7 +12,7 @@ public class TestInjection extends AbstractTestSpringContext {
         {
             BeanWithAFactoryProducedDependency bean = context.getBean(BeanWithAFactoryProducedDependency.class);
             Assert.assertNotNull(bean);
-            FactoryProductFieldDependency productFieldDependency = bean.getFactoryProductFieldDependency();
+            FactoryProductFieldDependency productFieldDependency = bean.getProductFieldDependency();
             Assert.assertNotNull(productFieldDependency);
             Assert.assertTrue(productFieldDependency.postConstruct);
             Assert.assertNotNull(productFieldDependency.getFactoryProductDependency());
@@ -21,7 +21,7 @@ public class TestInjection extends AbstractTestSpringContext {
         {
             BeanWithAFactoryProducedDependency bean = context.getBean(BeanWithAFactoryProducedDependency.class);
             Assert.assertNotNull(bean);
-            FactoryProductConstructorDependency productConstructorDependency = bean.getFactoryProductConstructorDependency();
+            FactoryProductConstructorDependency productConstructorDependency = bean.getProductConstructorDependency();
             Assert.assertNotNull(productConstructorDependency);
             Assert.assertTrue(productConstructorDependency.postConstruct);
             Assert.assertNotNull(productConstructorDependency.getFactoryProductDependency());
