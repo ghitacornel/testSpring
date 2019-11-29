@@ -4,15 +4,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.PostConstruct;
 
-public class FactoryProduct {
+public class FactoryProductFieldDependency {
 
     @Autowired
-    public FactoryProductDependency factoryProductDependency;
+    private FactoryProductDependency factoryProductDependency;
 
     public boolean postConstruct;
 
     @PostConstruct
     private void postConstruct() {
         postConstruct = true;
+    }
+
+    public FactoryProductDependency getFactoryProductDependency() {
+        return factoryProductDependency;
     }
 }

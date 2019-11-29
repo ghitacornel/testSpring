@@ -12,11 +12,19 @@ public class FactoryOfProducts {
      * @return products used in dependency injections
      */
     @Bean
-    public FactoryProduct build() {
+    public FactoryProductFieldDependency factoryProductFieldDependency() {
         used = true;
 
         // injections on product are performed automatically
-        return new FactoryProduct();
+        return new FactoryProductFieldDependency();
+
+    }
+
+    @Bean
+    // injections on factory parameters are performed automatically
+    public FactoryProductConstructorDependency factoryProductConstructorDependency(FactoryProductDependency factoryProductDependency) {
+        used = true;
+        return new FactoryProductConstructorDependency(factoryProductDependency);
     }
 
     public boolean isUsed() {
