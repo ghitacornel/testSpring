@@ -9,7 +9,7 @@ public class TestFactoriesPrototypeLifeCycle extends AbstractTestSpringContext {
     @Test
     public void testLifecyclePrototype() {
 
-        ConfigurationFactoryProductPrototype bean = context.getBean(ConfigurationFactoryProductPrototype.class);
+        ProductPrototype bean = context.getBean(ProductPrototype.class);
         Assert.assertNotNull(bean);
         Assert.assertTrue(bean.isPostConstructCalled);
         Assert.assertFalse(bean.isPreDestroyCalled);

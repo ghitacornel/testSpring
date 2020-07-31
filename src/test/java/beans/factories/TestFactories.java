@@ -22,24 +22,30 @@ public class TestFactories extends AbstractTestSpringContext {
     @Test
     public void testFactoryProducts() {
 
-        ConfigurationFactoryProductPrototype product_type_1_instance_1 = context.getBean(ConfigurationFactoryProductPrototype.class);
+        ProductPrototype product_type_1_instance_1 = context.getBean(ProductPrototype.class);
         Assert.assertNotNull(product_type_1_instance_1);
+        Assert.assertNotNull(product_type_1_instance_1.component);
         Assert.assertEquals("producePrototype", product_type_1_instance_1.createdBy);// verify product is created using expected factory method
 
-        ConfigurationFactoryProductPrototype product_type_1_instance_2 = context.getBean(ConfigurationFactoryProductPrototype.class);
+        ProductPrototype product_type_1_instance_2 = context.getBean(ProductPrototype.class);
         Assert.assertNotNull(product_type_1_instance_2);
+        Assert.assertNotNull(product_type_1_instance_2.component);
         Assert.assertEquals("producePrototype", product_type_1_instance_2.createdBy);// verify product is created using expected factory method
 
         Assert.assertNotSame(product_type_1_instance_1, product_type_1_instance_2);// verify factory product scope is honored
+        Assert.assertNotSame(product_type_1_instance_1.component, product_type_1_instance_2.component);// verify factory product scope is honored
 
-        ConfigurationFactoryProductSingleton product_type_2_instance_1 = context.getBean(ConfigurationFactoryProductSingleton.class);
+        ProductSingleton product_type_2_instance_1 = context.getBean(ProductSingleton.class);
         Assert.assertNotNull(product_type_2_instance_1);
+        Assert.assertNotNull(product_type_2_instance_1.component);
         Assert.assertEquals("produceSingleton", product_type_2_instance_1.createdBy);// verify product is created using expected factory method
 
-        ConfigurationFactoryProductSingleton product_type_2_instance_2 = context.getBean(ConfigurationFactoryProductSingleton.class);
+        ProductSingleton product_type_2_instance_2 = context.getBean(ProductSingleton.class);
         Assert.assertNotNull(product_type_2_instance_2);
+        Assert.assertNotNull(product_type_2_instance_2.component);
         Assert.assertEquals("produceSingleton", product_type_2_instance_2.createdBy);// verify product is created using expected factory method
 
         Assert.assertSame(product_type_2_instance_1, product_type_2_instance_2);// verify factory product scope is honored
+        Assert.assertSame(product_type_2_instance_1.component, product_type_2_instance_2.component);
     }
 }
