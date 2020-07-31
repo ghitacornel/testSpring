@@ -1,11 +1,11 @@
-package beans.injection.discriminator;
+package beans.injection.qualifier;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-@Retention(RetentionPolicy.RUNTIME)
 @Qualifier
-public @interface Type1Qualifier {
+@Retention(RetentionPolicy.RUNTIME)
+public @interface Qualifier2 {
 }
