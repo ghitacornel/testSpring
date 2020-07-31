@@ -5,22 +5,21 @@ import javax.annotation.PreDestroy;
 
 public class ProductSingleton {
 
-    public String createdBy = "CONSTRUCTOR";
+    public boolean createdByFactory = false;
 
-    public boolean isPostConstructCalled = false;
-    public boolean isPreDestroyCalled = false;
+    public boolean postConstructCalled = false;
+    public boolean preDestroyCalled = false;
 
     public SingletonProductComponent component;
 
     @PostConstruct
     private void postConstruct() {
-        isPostConstructCalled = true;
+        postConstructCalled = true;
     }
 
     @PreDestroy
     private void preDestroy() {
-        isPreDestroyCalled = true;
+        preDestroyCalled = true;
     }
-
 
 }

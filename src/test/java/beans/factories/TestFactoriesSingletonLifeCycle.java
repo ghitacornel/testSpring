@@ -11,14 +11,14 @@ public class TestFactoriesSingletonLifeCycle extends AbstractTestSpringContext {
 
         ProductSingleton bean = context.getBean(ProductSingleton.class);
         Assert.assertNotNull(bean);
-        Assert.assertTrue(bean.isPostConstructCalled);
-        Assert.assertFalse(bean.isPreDestroyCalled);
+        Assert.assertTrue(bean.postConstructCalled);
+        Assert.assertFalse(bean.preDestroyCalled);
 
         // destroy the container
         context.close();
 
-        Assert.assertTrue(bean.isPostConstructCalled);
-        Assert.assertTrue(bean.isPreDestroyCalled);
+        Assert.assertTrue(bean.postConstructCalled);
+        Assert.assertTrue(bean.preDestroyCalled);
 
     }
 }

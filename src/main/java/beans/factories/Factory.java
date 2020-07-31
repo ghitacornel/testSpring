@@ -12,7 +12,7 @@ public class Factory {
     @Scope("prototype")
     public ProductPrototype producePrototype(@Autowired PrototypeProductComponent component) {
         ProductPrototype product = new ProductPrototype();
-        product.createdBy = "producePrototype";
+        product.createdByFactory = true;
         product.component = component;
         return product;
     }
@@ -22,7 +22,7 @@ public class Factory {
     public ProductSingleton produceSingleton(SingletonProductComponent component) {
         ProductSingleton product = new ProductSingleton();
         product.component = component;
-        product.createdBy = "produceSingleton";
+        product.createdByFactory = true;
         return product;
     }
 

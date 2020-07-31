@@ -11,18 +11,18 @@ public class TestFactoriesPrototypeLifeCycle extends AbstractTestSpringContext {
 
         ProductPrototype bean = context.getBean(ProductPrototype.class);
         Assert.assertNotNull(bean);
-        Assert.assertTrue(bean.isPostConstructCalled);
-        Assert.assertFalse(bean.isPreDestroyCalled);
+        Assert.assertTrue(bean.postConstructCalled);
+        Assert.assertFalse(bean.preDestroyCalled);
 
         // destroy the container
         context.close();
 
-        Assert.assertTrue(bean.isPostConstructCalled);
+        Assert.assertTrue(bean.postConstructCalled);
         /**
          * even after the container is destroyed the pre destroy event is not triggered<br>
          * This behavior occurs because this bean is no longer maintained by the container once produced and delivered
          */
-        Assert.assertFalse(bean.isPreDestroyCalled);
+        Assert.assertFalse(bean.preDestroyCalled);
 
     }
 

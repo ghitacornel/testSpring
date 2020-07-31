@@ -14,10 +14,12 @@ public class TestFactoriesInjection extends AbstractTestSpringContext {
 
         Assert.assertNotNull(bean.productSingleton);
         Assert.assertNotNull(bean.productSingleton.component);
-        Assert.assertTrue(bean.productSingleton.isPostConstructCalled);
+        Assert.assertTrue(bean.productSingleton.postConstructCalled);
+        Assert.assertTrue(bean.productSingleton.createdByFactory);
 
         Assert.assertNotNull(bean.productPrototype);
         Assert.assertNotNull(bean.productPrototype.component);
-        Assert.assertTrue(bean.productPrototype.isPostConstructCalled);
+        Assert.assertTrue(bean.productPrototype.postConstructCalled);
+        Assert.assertTrue(bean.productPrototype.createdByFactory);
     }
 }
