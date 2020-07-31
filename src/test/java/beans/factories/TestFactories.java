@@ -9,10 +9,10 @@ public class TestFactories extends AbstractTestSpringContext {
     @Test
     public void testConfigurationFactoriesAreSingletonsByDefault() {
 
-        ConfigurationFactory bean1 = context.getBean(ConfigurationFactory.class);
+        Factory bean1 = context.getBean(Factory.class);
         Assert.assertNotNull(bean1);
 
-        ConfigurationFactory bean2 = context.getBean(ConfigurationFactory.class);
+        Factory bean2 = context.getBean(Factory.class);
         Assert.assertNotNull(bean2);
 
         Assert.assertSame(bean1, bean2);// observe configuration factories are automatically registered as singleton beans
