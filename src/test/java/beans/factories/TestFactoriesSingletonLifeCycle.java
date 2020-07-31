@@ -9,7 +9,7 @@ public class TestFactoriesSingletonLifeCycle extends AbstractTestSpringContext {
     @Test
     public void testLifecycleSingleton() {
 
-        ProductSingleton bean = context.getBean(ProductSingleton.class);
+        SingletonProduct bean = context.getBean(SingletonProduct.class);
         Assert.assertNotNull(bean);
         Assert.assertTrue(bean.postConstructCalled);
         Assert.assertFalse(bean.preDestroyCalled);

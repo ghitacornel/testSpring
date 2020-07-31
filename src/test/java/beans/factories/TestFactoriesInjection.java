@@ -11,15 +11,9 @@ public class TestFactoriesInjection extends AbstractTestSpringContext {
         FactoryInjectedTarget bean = context.getBean(FactoryInjectedTarget.class);
         Assert.assertNotNull(bean);
         Assert.assertNotNull(bean.factory);
-
-        Assert.assertNotNull(bean.productSingleton);
-        Assert.assertNotNull(bean.productSingleton.component);
-        Assert.assertTrue(bean.productSingleton.postConstructCalled);
-        Assert.assertTrue(bean.productSingleton.createdByFactory);
-
-        Assert.assertNotNull(bean.productPrototype);
-        Assert.assertNotNull(bean.productPrototype.component);
-        Assert.assertTrue(bean.productPrototype.postConstructCalled);
-        Assert.assertTrue(bean.productPrototype.createdByFactory);
+        Assert.assertNotNull(bean.singletonProduct);
+        Assert.assertNotNull(bean.singletonProduct.component);
+        Assert.assertNotNull(bean.prototypeProduct);
+        Assert.assertNotNull(bean.prototypeProduct.component);
     }
 }

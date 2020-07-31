@@ -22,12 +22,12 @@ public class TestFactories extends AbstractTestSpringContext {
     @Test
     public void testFactoryProducts() {
 
-        ProductPrototype product_type_1_instance_1 = context.getBean(ProductPrototype.class);
+        PrototypeProduct product_type_1_instance_1 = context.getBean(PrototypeProduct.class);
         Assert.assertNotNull(product_type_1_instance_1);
         Assert.assertNotNull(product_type_1_instance_1.component);
         Assert.assertTrue(product_type_1_instance_1.createdByFactory);// verify product is created using expected factory method
 
-        ProductPrototype product_type_1_instance_2 = context.getBean(ProductPrototype.class);
+        PrototypeProduct product_type_1_instance_2 = context.getBean(PrototypeProduct.class);
         Assert.assertNotNull(product_type_1_instance_2);
         Assert.assertNotNull(product_type_1_instance_2.component);
         Assert.assertTrue(product_type_1_instance_2.createdByFactory);// verify product is created using expected factory method
@@ -35,12 +35,12 @@ public class TestFactories extends AbstractTestSpringContext {
         Assert.assertNotSame(product_type_1_instance_1, product_type_1_instance_2);// verify factory product scope is honored
         Assert.assertNotSame(product_type_1_instance_1.component, product_type_1_instance_2.component);// verify factory product scope is honored
 
-        ProductSingleton product_type_2_instance_1 = context.getBean(ProductSingleton.class);
+        SingletonProduct product_type_2_instance_1 = context.getBean(SingletonProduct.class);
         Assert.assertNotNull(product_type_2_instance_1);
         Assert.assertNotNull(product_type_2_instance_1.component);
         Assert.assertTrue(product_type_2_instance_1.createdByFactory);// verify product is created using expected factory method
 
-        ProductSingleton product_type_2_instance_2 = context.getBean(ProductSingleton.class);
+        SingletonProduct product_type_2_instance_2 = context.getBean(SingletonProduct.class);
         Assert.assertNotNull(product_type_2_instance_2);
         Assert.assertNotNull(product_type_2_instance_2.component);
         Assert.assertTrue(product_type_2_instance_2.createdByFactory);// verify product is created using expected factory method

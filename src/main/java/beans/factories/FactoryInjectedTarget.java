@@ -10,9 +10,9 @@ public class FactoryInjectedTarget {
     Factory factory;
 
     @Autowired
-    ProductPrototype productPrototype;
+    PrototypeProduct prototypeProduct;
 
     @Autowired
-    ProductSingleton productSingleton;
+    SingletonProduct singletonProduct;
 
 }

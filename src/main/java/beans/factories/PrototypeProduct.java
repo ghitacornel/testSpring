@@ -3,14 +3,14 @@ package beans.factories;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-public class ProductSingleton {
+public class PrototypeProduct {
 
     public boolean createdByFactory = false;
 
     public boolean postConstructCalled = false;
     public boolean preDestroyCalled = false;
 
-    public SingletonProductComponent component;
+    public PrototypeProductComponent component;
 
     @PostConstruct
     private void postConstruct() {

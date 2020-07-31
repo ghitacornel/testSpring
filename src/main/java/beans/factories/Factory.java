@@ -10,8 +10,8 @@ public class Factory {
 
     @Bean
     @Scope("prototype")
-    public ProductPrototype producePrototype(@Autowired PrototypeProductComponent component) {
-        ProductPrototype product = new ProductPrototype();
+    public PrototypeProduct producePrototype(@Autowired PrototypeProductComponent component) {
+        PrototypeProduct product = new PrototypeProduct();
         product.createdByFactory = true;
         product.component = component;
         return product;
@@ -19,8 +19,8 @@ public class Factory {
 
     @Bean
     @Scope("singleton")// this is redundant
-    public ProductSingleton produceSingleton(SingletonProductComponent component) {
-        ProductSingleton product = new ProductSingleton();
+    public SingletonProduct produceSingleton(SingletonProductComponent component) {
+        SingletonProduct product = new SingletonProduct();
         product.component = component;
         product.createdByFactory = true;
         return product;
