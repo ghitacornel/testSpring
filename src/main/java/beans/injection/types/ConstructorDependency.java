@@ -1,4 +1,4 @@
-package beans.injection.direct;
+package beans.injection.types;
 
 import org.springframework.stereotype.Component;
 
