@@ -3,13 +3,14 @@ package beans.injection.types;
 import org.springframework.stereotype.Component;
 
 @Component
-public class InjectionTargetAutomaticallyInjected {
+public class ConstructorInjectionTargetAutomaticallyInjected {
 
-    // noo need to mark it as @Autowired
+    // no need to mark it as @Autowired
     final private ConstructorDependency constructorDependency;
     private boolean constructorUsedInInjection = false;
 
-    public InjectionTargetAutomaticallyInjected(ConstructorDependency constructorDependency) {
+    // no need to mark it as @Autowired
+    public ConstructorInjectionTargetAutomaticallyInjected(ConstructorDependency constructorDependency) {
         this.constructorDependency = constructorDependency;
         constructorUsedInInjection = true;
     }

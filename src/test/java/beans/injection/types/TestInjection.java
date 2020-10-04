@@ -23,7 +23,7 @@ public class TestInjection extends AbstractTestSpringContext {
 
     @Test
     public void testAutomaticInjectionThroughConstructor() {
-        InjectionTargetAutomaticallyInjected bean = context.getBean(InjectionTargetAutomaticallyInjected.class);
+        ConstructorInjectionTargetAutomaticallyInjected bean = context.getBean(ConstructorInjectionTargetAutomaticallyInjected.class);
         Assert.assertNotNull(bean);
         Assert.assertTrue(bean.isConstructorUsedInInjection());
 
