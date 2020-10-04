@@ -12,11 +12,18 @@ public class BeanWithAFactoryProducedDependency {
     @Autowired
     private FactoryProductWithConstructorDependency productConstructorDependency;
 
+    @Autowired
+    FactoryProductWithSetterDependency factoryProductWithSetterDependency;
+
     public FactoryProductWithFieldDependency getProductFieldDependency() {
         return productFieldDependency;
     }
 
     public FactoryProductWithConstructorDependency getProductConstructorDependency() {
         return productConstructorDependency;
+    }
+
+    public FactoryProductWithSetterDependency getFactoryProductWithSetterDependency() {
+        return factoryProductWithSetterDependency;
     }
 }

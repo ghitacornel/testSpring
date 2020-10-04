@@ -4,20 +4,21 @@ import javax.annotation.PostConstruct;
 
 public class FactoryProductWithConstructorDependency {
 
-    final private FactoryProductDependency factoryProductDependency;
+    final private FactoryProductDependency dependency;
 
-    public boolean postConstruct;
-
-    public FactoryProductWithConstructorDependency(FactoryProductDependency factoryProductDependency) {
-        this.factoryProductDependency = factoryProductDependency;
-    }
+    public boolean postConstruct = false;
 
     @PostConstruct
     private void postConstruct() {
         postConstruct = true;
     }
 
-    public FactoryProductDependency getFactoryProductDependency() {
-        return factoryProductDependency;
+    public FactoryProductDependency getDependency() {
+        return dependency;
     }
+
+    public FactoryProductWithConstructorDependency(FactoryProductDependency dependency) {
+        this.dependency = dependency;
+    }
+
 }
