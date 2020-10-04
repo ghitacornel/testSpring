@@ -7,16 +7,16 @@ import org.springframework.stereotype.Component;
 public class BeanWithAFactoryProducedDependency {
 
     @Autowired
-    private FactoryProductFieldDependency productFieldDependency;
+    private FactoryProductWithFieldDependency productFieldDependency;
 
     @Autowired
-    private FactoryProductConstructorDependency productConstructorDependency;
+    private FactoryProductWithConstructorDependency productConstructorDependency;
 
-    public FactoryProductFieldDependency getProductFieldDependency() {
+    public FactoryProductWithFieldDependency getProductFieldDependency() {
         return productFieldDependency;
     }
 
-    public FactoryProductConstructorDependency getProductConstructorDependency() {
+    public FactoryProductWithConstructorDependency getProductConstructorDependency() {
         return productConstructorDependency;
     }
 }

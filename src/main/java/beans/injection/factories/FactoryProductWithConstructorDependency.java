@@ -2,13 +2,13 @@ package beans.injection.factories;
 
 import javax.annotation.PostConstruct;
 
-public class FactoryProductConstructorDependency {
+public class FactoryProductWithConstructorDependency {
 
     final private FactoryProductDependency factoryProductDependency;
 
     public boolean postConstruct;
 
-    public FactoryProductConstructorDependency(FactoryProductDependency factoryProductDependency) {
+    public FactoryProductWithConstructorDependency(FactoryProductDependency factoryProductDependency) {
         this.factoryProductDependency = factoryProductDependency;
     }
 

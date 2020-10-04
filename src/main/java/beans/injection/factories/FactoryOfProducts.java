@@ -6,28 +6,26 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class FactoryOfProducts {
 
-    private boolean used = false;
+    public boolean usedFactoryProductWithFieldDependency = false;
+    public boolean usedFactoryProductWithConstructorDependency = false;
 
     /**
      * @return products used in dependency injections
      */
     @Bean
-    public FactoryProductFieldDependency factoryProductFieldDependency() {
-        used = true;
+    public FactoryProductWithFieldDependency factoryProductFieldDependency() {
+        usedFactoryProductWithFieldDependency = true;
 
         // injections on product are performed automatically
-        return new FactoryProductFieldDependency();
+        return new FactoryProductWithFieldDependency();
 
     }
 
     @Bean
     // injections on factory parameters are performed automatically
-    public FactoryProductConstructorDependency factoryProductConstructorDependency(FactoryProductDependency factoryProductDependency) {
-        used = true;
-        return new FactoryProductConstructorDependency(factoryProductDependency);
+    public FactoryProductWithConstructorDependency factoryProductConstructorDependency(FactoryProductDependency factoryProductDependency) {
+        usedFactoryProductWithConstructorDependency = true;
+        return new FactoryProductWithConstructorDependency(factoryProductDependency);
     }
 
-    public boolean isUsed() {
-        return used;
-    }
 }

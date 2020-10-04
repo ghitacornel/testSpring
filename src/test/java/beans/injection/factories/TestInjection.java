@@ -12,24 +12,25 @@ public class TestInjection extends AbstractTestSpringContext {
         {
             BeanWithAFactoryProducedDependency bean = context.getBean(BeanWithAFactoryProducedDependency.class);
             Assert.assertNotNull(bean);
-            FactoryProductFieldDependency productFieldDependency = bean.getProductFieldDependency();
-            Assert.assertNotNull(productFieldDependency);
-            Assert.assertTrue(productFieldDependency.postConstruct);
-            Assert.assertNotNull(productFieldDependency.getFactoryProductDependency());
+            FactoryProductWithFieldDependency factoryProductWithFieldDependency = bean.getProductFieldDependency();
+            Assert.assertNotNull(factoryProductWithFieldDependency);
+            Assert.assertTrue(factoryProductWithFieldDependency.postConstruct);
+            Assert.assertNotNull(factoryProductWithFieldDependency.getFactoryProductDependency());
         }
 
         {
             BeanWithAFactoryProducedDependency bean = context.getBean(BeanWithAFactoryProducedDependency.class);
             Assert.assertNotNull(bean);
-            FactoryProductConstructorDependency productConstructorDependency = bean.getProductConstructorDependency();
-            Assert.assertNotNull(productConstructorDependency);
-            Assert.assertTrue(productConstructorDependency.postConstruct);
-            Assert.assertNotNull(productConstructorDependency.getFactoryProductDependency());
+            FactoryProductWithConstructorDependency factoryProductWithConstructorDependency = bean.getProductConstructorDependency();
+            Assert.assertNotNull(factoryProductWithConstructorDependency);
+            Assert.assertTrue(factoryProductWithConstructorDependency.postConstruct);
+            Assert.assertNotNull(factoryProductWithConstructorDependency.getFactoryProductDependency());
         }
 
         FactoryOfProducts factory = context.getBean(FactoryOfProducts.class);
         Assert.assertNotNull(factory);
-        Assert.assertTrue(factory.isUsed());
+        Assert.assertTrue(factory.usedFactoryProductWithFieldDependency);
+        Assert.assertTrue(factory.usedFactoryProductWithConstructorDependency);
 
     }
 
