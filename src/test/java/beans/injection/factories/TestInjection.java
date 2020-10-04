@@ -10,30 +10,30 @@ public class TestInjection extends AbstractTestSpringContext {
     public void testInjectionWithAProvidedByAFactoryDependency() {
 
         {
-            BeanWithAFactoryProducedDependency bean = context.getBean(BeanWithAFactoryProducedDependency.class);
+            BeanWithAFactoryProducedDependencies bean = context.getBean(BeanWithAFactoryProducedDependencies.class);
             Assert.assertNotNull(bean);
-            FactoryProductWithFieldDependency factoryProductWithFieldDependency = bean.getProductFieldDependency();
-            Assert.assertNotNull(factoryProductWithFieldDependency);
-            Assert.assertTrue(factoryProductWithFieldDependency.postConstruct);
-            Assert.assertNotNull(factoryProductWithFieldDependency.getDependency());
+            FactoryProductWithFieldDependency dependency = bean.productWithFieldDependency;
+            Assert.assertNotNull(dependency);
+            Assert.assertTrue(dependency.postConstruct);
+            Assert.assertNotNull(dependency.getDependency());
         }
 
         {
-            BeanWithAFactoryProducedDependency bean = context.getBean(BeanWithAFactoryProducedDependency.class);
+            BeanWithAFactoryProducedDependencies bean = context.getBean(BeanWithAFactoryProducedDependencies.class);
             Assert.assertNotNull(bean);
-            FactoryProductWithConstructorDependency factoryProductWithConstructorDependency = bean.getProductConstructorDependency();
-            Assert.assertNotNull(factoryProductWithConstructorDependency);
-            Assert.assertTrue(factoryProductWithConstructorDependency.postConstruct);
-            Assert.assertNotNull(factoryProductWithConstructorDependency.getDependency());
+            FactoryProductWithConstructorDependency dependency = bean.productWithConstructorDependency;
+            Assert.assertNotNull(dependency);
+            Assert.assertTrue(dependency.postConstruct);
+            Assert.assertNotNull(dependency.getDependency());
         }
 
         {
-            BeanWithAFactoryProducedDependency bean = context.getBean(BeanWithAFactoryProducedDependency.class);
+            BeanWithAFactoryProducedDependencies bean = context.getBean(BeanWithAFactoryProducedDependencies.class);
             Assert.assertNotNull(bean);
-            FactoryProductWithSetterDependency factoryProductWithSetterDependency = bean.getFactoryProductWithSetterDependency();
-            Assert.assertNotNull(factoryProductWithSetterDependency);
-            Assert.assertTrue(factoryProductWithSetterDependency.postConstruct);
-            Assert.assertNotNull(factoryProductWithSetterDependency.getDependency());
+            FactoryProductWithSetterDependency dependency = bean.productWithSetterDependency;
+            Assert.assertNotNull(dependency);
+            Assert.assertTrue(dependency.postConstruct);
+            Assert.assertNotNull(dependency.getDependency());
         }
 
         FactoryOfProducts factory = context.getBean(FactoryOfProducts.class);

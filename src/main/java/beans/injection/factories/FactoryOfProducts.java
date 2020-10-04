@@ -15,7 +15,7 @@ public class FactoryOfProducts {
 
     @Bean
     // injections on product are performed automatically after return
-    public FactoryProductWithFieldDependency factoryProductFieldDependency() {
+    public FactoryProductWithFieldDependency factoryProductWithFieldDependency() {
         usedFactoryProductWithFieldDependency = true;
         return new FactoryProductWithFieldDependency();
     }
@@ -23,14 +23,14 @@ public class FactoryOfProducts {
     @Bean
     // injections on factory parameters are performed automatically
     // no need to specify @Autowired on method parameter
-    public FactoryProductWithConstructorDependency factoryProductConstructorDependency(FactoryProductDependency factoryProductDependency) {
+    public FactoryProductWithConstructorDependency factoryProductWithConstructorDependency(FactoryProductDependency factoryProductDependency) {
         usedFactoryProductWithConstructorDependency = true;
         return new FactoryProductWithConstructorDependency(factoryProductDependency);
     }
 
     @Bean
     // injections on product are performed automatically after return
-    public FactoryProductWithSetterDependency factoryProductSetterDependency() {
+    public FactoryProductWithSetterDependency factoryProductWithSetterDependency() {
         usedFactoryProductWithSetterDependency = true;
         return new FactoryProductWithSetterDependency();
     }
