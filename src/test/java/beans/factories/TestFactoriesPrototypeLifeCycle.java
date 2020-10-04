@@ -18,10 +18,11 @@ public class TestFactoriesPrototypeLifeCycle extends AbstractTestSpringContext {
         context.close();
 
         Assert.assertTrue(bean.postConstructCalled);
-        /**
-         * even after the container is destroyed the pre destroy event is not triggered<br>
-         * This behavior occurs because this bean is no longer maintained by the container once produced and delivered
-         */
+
+
+        // even after the container is destroyed the pre destroy event is not triggered
+        // this behavior occurs because this bean is no longer maintained by the container once produced and delivered
+
         Assert.assertFalse(bean.preDestroyCalled);
 
     }
