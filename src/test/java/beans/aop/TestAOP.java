@@ -11,7 +11,7 @@ public class TestAOP extends AbstractTestSpringContext {
     public void test_AOP_OK() {
         BeanAffectedByAspect bean = context.getBean(BeanAffectedByAspect.class);
         Assert.assertNotNull(bean);
-        System.out.println(bean.doIt());
+        System.out.println(bean.complexBusiness());
 
         // CHECK THE CONSOLE
 
@@ -21,7 +21,7 @@ public class TestAOP extends AbstractTestSpringContext {
     public void test_AOP_FAIL() {
         BeanAffectedByAspect bean = context.getBean(BeanAffectedByAspect.class);
         Assert.assertNotNull(bean);
-        System.out.println(bean.fail());
+        System.out.println(bean.complexBusinessThatThrowsException());
 
         // CHECK THE CONSOLE
 

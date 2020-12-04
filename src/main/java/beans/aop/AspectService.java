@@ -1,5 +1,6 @@
 package beans.aop;
 
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
@@ -11,22 +12,29 @@ public class AspectService {
 
     @Before(value = "execution(* beans.aop.beans.*.*(..))")
     void aspectExecutedBeforeExecutingTargetedMethods() {
-        System.out.println("before executing method call BEFORE");
+        System.out.println("AOP invoked BEFORE executing method call");
     }
 
     @After(value = "execution(* beans.aop.beans.*.*(..))")
     void aspectExecutedAfterExecutingTargetedMethods() {
-        System.out.println("after executing method call AFTER");
+        System.out.println("AOP invoked AFTER executing method call");
     }
 
     @AfterReturning(pointcut = "execution(* beans.aop.beans.*.*(..))", returning = "valueReturnedByTargetedMethod")
     public void aspectExecutedAfterExecutingTargetedMethodsReturnAValues(Object valueReturnedByTargetedMethod) {
-        System.out.println("returned object is " + valueReturnedByTargetedMethod);
+        System.out.println("AOP invoked when RETURN object is " + valueReturnedByTargetedMethod);
     }
 
     @AfterThrowing(pointcut = "execution(* beans.aop.beans.*.*(..))", throwing = "exceptionThrownByTargetedMethod")
     public void aspectExecutedWhenTargetedMethodsThrowExceptions(Exception exceptionThrownByTargetedMethod) {
-        System.out.println("exception thrown is " + exceptionThrownByTargetedMethod);
+        System.out.println("AOP invoked when EXCEPTION thrown is " + exceptionThrownByTargetedMethod);
+    }
+
+    @Around("execution(* beans.aop.beans.*.*(..))")
+    public void aroundAspect(ProceedingJoinPoint joinPoint) throws Throwable {
+        System.out.println("AOP AROUND invoked BEFORE executing method call");
+        joinPoint.proceed();
+        System.out.println("AOP AROUND invoked AFTER executing method call");
     }
 
 }

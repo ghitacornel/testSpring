@@ -5,11 +5,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class BeanAffectedByAspect {
 
-    public String doIt() {
+    public String complexBusiness() {
         return this + " executed";
     }
 
-    public String fail() {
+    public String complexBusinessThatThrowsException() {
         throw new RuntimeException("fail");
     }
 }
