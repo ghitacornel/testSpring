@@ -27,7 +27,7 @@ public class TestFactories extends AbstractTestSpringContext {
         Assert.assertNotNull(product_type_1_instance_1.component);
         Assert.assertTrue(product_type_1_instance_1.createdByFactory);// verify product is created using expected factory method
 
-        PrototypeProduct product_type_1_instance_2 = context.getBean(PrototypeProduct.class);
+        PrototypeProduct product_type_1_instance_2 = context.getBean("producePrototype", PrototypeProduct.class);
         Assert.assertNotNull(product_type_1_instance_2);
         Assert.assertNotNull(product_type_1_instance_2.component);
         Assert.assertTrue(product_type_1_instance_2.createdByFactory);// verify product is created using expected factory method
@@ -40,7 +40,7 @@ public class TestFactories extends AbstractTestSpringContext {
         Assert.assertNotNull(product_type_2_instance_1.component);
         Assert.assertTrue(product_type_2_instance_1.createdByFactory);// verify product is created using expected factory method
 
-        SingletonProduct product_type_2_instance_2 = context.getBean(SingletonProduct.class);
+        SingletonProduct product_type_2_instance_2 = context.getBean("produceSingleton", SingletonProduct.class);
         Assert.assertNotNull(product_type_2_instance_2);
         Assert.assertNotNull(product_type_2_instance_2.component);
         Assert.assertTrue(product_type_2_instance_2.createdByFactory);// verify product is created using expected factory method
