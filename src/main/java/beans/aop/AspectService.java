@@ -32,9 +32,9 @@ public class AspectService {
 
     @Around("execution(* beans.aop.beans.*.*(..))")
     public void aroundAspect(ProceedingJoinPoint joinPoint) throws Throwable {
-        System.out.println("AOP AROUND invoked BEFORE executing method call");
+        System.out.println("AOP AROUND invoked BEFORE executing method call " + joinPoint);
         joinPoint.proceed();
-        System.out.println("AOP AROUND invoked AFTER executing method call");
+        System.out.println("AOP AROUND invoked AFTER executing method call " + joinPoint);
     }
 
 }
