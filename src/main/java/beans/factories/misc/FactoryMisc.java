@@ -8,12 +8,14 @@ public class FactoryMisc {
 
     @Bean
     Product1 product1() {
-        return new Product1();
+        Product1 product1 = new Product1();
+        return product1;
     }
 
     @Bean
     Product2 product2() {
-        return new Product2(product1());
+        Product1 product1 = product1();// observe "product1" not invoked, reused same product
+        return new Product2(product1);
     }
 
 }
