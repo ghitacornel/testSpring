@@ -8,7 +8,7 @@ public class FactoryMisc {
 
     @Bean
     Product1 product1() {
-        Product1 product1 = new Product1();
+        Product1 product1 = new Product1();// observe product1 only once creation and the reused
         return product1;
     }
 
