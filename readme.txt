@@ -55,6 +55,7 @@ examples
 - Spring org.springframework.web.context.annotation.RequestScope
 - Spring org.springframework.web.context.annotation.SessionScope
 - Spring org.springframework.web.context.annotation.ApplicationScope
+- Spring org.springframework.web.bind.annotation.RestController
 - CDI javax.enterprise.context.RequestScoped
 - CDI javax.enterprise.context.SessionScoped
 - CDI javax.enterprise.context.ApplicationScoped
@@ -72,9 +73,10 @@ See :
 - javax.annotation.PostConstruct
 - javax.annotation.PreDestroy
 
+3.1  BEAN CONTAINER CAN PROVIDE LAZINESS OR EAGERNESS WHEN CONTROLLING BEAN INSTANCE CREATION
 Some container specific lifecycle control methods :
-- javax.ejb.Startup
-- org.springframework.context.annotation.Lazy
+- javax.ejb.Startup ( EJB is LAZY by default when resolving dependencies and instantiating beans, can override to EAGER )
+- org.springframework.context.annotation.Lazy ( Spring is EAGER by default when resolving dependencies and instantiating beans, can override to LAZY )
 
 see packages beans.lifecycle.*
 
