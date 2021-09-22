@@ -162,6 +162,7 @@ see package beans.injection.*
 
 Property values can be provided via XML files.
 Property values can be provided via PROPERTIES files.
+Property values can be provided via YAML files.
 Property values can be provided via ENVIRONMENT variables.
 
 examples
