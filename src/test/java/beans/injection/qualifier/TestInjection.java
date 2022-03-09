@@ -1,7 +1,7 @@
 package beans.injection.qualifier;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import template.AbstractTestSpringContext;
 
 public class TestInjection extends AbstractTestSpringContext {
@@ -9,11 +9,11 @@ public class TestInjection extends AbstractTestSpringContext {
     @Test
     public void testInjectionWithInjectionDiscriminators() {
         QualifierInjectionTarget bean = context.getBean(QualifierInjectionTarget.class);
-        Assert.assertNotNull(bean);
-        Assert.assertNotNull(bean.getComponent1());
-        Assert.assertSame(QualifierComponent1.class, bean.getComponent1().getClass());
-        Assert.assertNotNull(bean.getComponent2());
-        Assert.assertSame(QualifierComponent2.class, bean.getComponent2().getClass());
+        Assertions.assertNotNull(bean);
+        Assertions.assertNotNull(bean.getComponent1());
+        Assertions.assertSame(QualifierComponent1.class, bean.getComponent1().getClass());
+        Assertions.assertNotNull(bean.getComponent2());
+        Assertions.assertSame(QualifierComponent2.class, bean.getComponent2().getClass());
     }
 
 }

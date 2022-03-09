@@ -1,7 +1,7 @@
 package template;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public abstract class AbstractTestSpringContext {
@@ -11,12 +11,12 @@ public abstract class AbstractTestSpringContext {
      */
     protected static ClassPathXmlApplicationContext context;
 
-    @BeforeClass
+    @BeforeAll
     public static void before() {
         context = new ClassPathXmlApplicationContext("spring-beans.xml");
     }
 
-    @AfterClass
+    @AfterAll
     public static void after() {
         context.close();
     }

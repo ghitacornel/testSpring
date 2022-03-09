@@ -1,13 +1,13 @@
 package beans.properties.environment;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import template.AbstractTestSpringContext;
 
 public class TestInjection extends AbstractTestSpringContext {
 
-    @Before
+    @BeforeEach
     public void setUp() {
         System.setProperty("environmentProperty", "bbb");
         System.setProperty("anotherEnvironmentProperty", "yyy");
@@ -16,9 +16,9 @@ public class TestInjection extends AbstractTestSpringContext {
     @Test
     public void testInjectionOfEnvironment() {
         BeanWithPropertiesInjectedFromEnvironment bean = context.getBean(BeanWithPropertiesInjectedFromEnvironment.class);
-        Assert.assertNotNull(bean);
-        Assert.assertNotNull(bean.getEnvironment());
-        Assert.assertEquals("yyy", bean.getEnvironment().getProperty("anotherEnvironmentProperty"));
-        Assert.assertEquals("bbb", bean.getEnvironment().getProperty("environmentProperty"));
+        Assertions.assertNotNull(bean);
+        Assertions.assertNotNull(bean.getEnvironment());
+        Assertions.assertEquals("yyy", bean.getEnvironment().getProperty("anotherEnvironmentProperty"));
+        Assertions.assertEquals("bbb", bean.getEnvironment().getProperty("environmentProperty"));
     }
 }

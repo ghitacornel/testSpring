@@ -1,16 +1,15 @@
 package beans.injection.circularconstructor;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class TestInjection {
 
-    @Test(expected = org.springframework.beans.factory.UnsatisfiedDependencyException.class)
+    @Test
     public void testInjectionCircularDependency() {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-beans.xml", "circular_dependency_constructor.xml");
-        A bean = context.getBean(A.class);
-        Assert.assertNotNull(bean);
+        Assertions.assertThrows(org.springframework.beans.factory.UnsatisfiedDependencyException.class,
+                () -> new ClassPathXmlApplicationContext("spring-beans.xml", "circular_dependency_constructor.xml"));
     }
 
 }
