@@ -13,12 +13,11 @@ public class SynchronousEventListener implements ApplicationListener<CustomSprin
     @Override
     public void onApplicationEvent(CustomSpringEvent event) {
         processedEvents.add(event);
+        processedByThreads.add(Thread.currentThread());
     }
 
-    final private List<CustomSpringEvent> processedEvents = new ArrayList<>();
-
-    public List<CustomSpringEvent> getProcessedEvents() {
-        return processedEvents;
-    }
+    // for test purpose
+    final public List<CustomSpringEvent> processedEvents = new ArrayList<>();
+    final public List<Thread> processedByThreads = new ArrayList<>();
 
 }
