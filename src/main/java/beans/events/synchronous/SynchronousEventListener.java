@@ -1,16 +1,16 @@
 package beans.events.synchronous;
 
 import beans.events.CustomSpringEvent;
-import org.springframework.context.ApplicationListener;
+import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class SynchronousEventListener implements ApplicationListener<CustomSpringEvent> {
+public class SynchronousEventListener {
 
-    @Override
+    @EventListener// this one or implements ApplicationListener<CustomSpringEvent>
     public void onApplicationEvent(CustomSpringEvent event) {
         processedEvents.add(event);
         processedByThreads.add(Thread.currentThread());
