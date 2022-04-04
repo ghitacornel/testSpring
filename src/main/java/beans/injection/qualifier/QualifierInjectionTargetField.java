@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * Note that some dependencies cannot be resolved without a discriminator
  */
 @Component
-public class QualifierInjectionTarget {
+public class QualifierInjectionTargetField {
 
     @Qualifier1// specific discriminator is used for this dependency
     @Autowired
