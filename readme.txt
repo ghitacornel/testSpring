@@ -53,6 +53,7 @@ examples
 - Spring org.springframework.stereotype.Service
 - Spring org.springframework.stereotype.Repository
 - Spring org.springframework.stereotype.Controller
+- Spring org.springframework.context.annotation.Configuration
 - Spring org.springframework.web.context.annotation.RequestScope
 - Spring org.springframework.web.context.annotation.SessionScope
 - Spring org.springframework.web.context.annotation.ApplicationScope
