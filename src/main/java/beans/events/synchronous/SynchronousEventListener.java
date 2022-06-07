@@ -14,7 +14,7 @@ import java.util.List;
 public class SynchronousEventListener {
 
     /**
-     * the actual consumption is done here
+     * the actual consumption of the event happens here
      *
      * @param event
      */
