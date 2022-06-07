@@ -2,6 +2,9 @@ package beans.events;
 
 import org.springframework.context.ApplicationEvent;
 
+/**
+ * see it as a particular but simple POJO
+ */
 public class CustomSpringEvent extends ApplicationEvent {
 
     private String message;
