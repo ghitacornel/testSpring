@@ -7,9 +7,17 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * My simple consumer of events (synchronous one)
+ */
 @Component
 public class SynchronousEventListener {
 
+    /**
+     * the actual consumption is done here
+     *
+     * @param event
+     */
     @EventListener// this one or implements ApplicationListener<CustomSpringEvent>
     public void onApplicationEvent(CustomSpringEvent event) {
         processedEvents.add(event);
