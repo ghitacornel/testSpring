@@ -10,6 +10,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * My simple consumer of events (asynchronous one)
+ */
 @Component
 public class AsynchronousEventListener {
 
@@ -17,6 +20,9 @@ public class AsynchronousEventListener {
      * Remember to enable asynchronous method execution in your application with @EnableAsync
      */
     @Async
+    /**
+     * the actual consumption of the event happens here
+     */
     @EventListener
     public void processEvent(CustomSpringEvent event) {
         processedEvents.add(event);
