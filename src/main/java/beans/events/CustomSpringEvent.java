@@ -7,6 +7,10 @@ import org.springframework.context.ApplicationEvent;
  */
 public class CustomSpringEvent extends ApplicationEvent {
 
+    /**
+     * payload of the event
+     * the actual content of the event
+     */
     private String message;
 
     public CustomSpringEvent(Object source, String message) {
