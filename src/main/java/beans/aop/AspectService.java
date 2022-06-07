@@ -31,10 +31,11 @@ public class AspectService {
     }
 
     @Around("execution(* beans.aop.beans.*.*(..))")
-    public void aroundAspect(ProceedingJoinPoint joinPoint) throws Throwable {
+    public Object aroundAspect(ProceedingJoinPoint joinPoint) throws Throwable {
         System.out.println("AOP AROUND invoked BEFORE executing method call " + joinPoint);
-        joinPoint.proceed();
+        Object result = joinPoint.proceed();
         System.out.println("AOP AROUND invoked AFTER executing method call " + joinPoint);
+        return result + " + data added by the aspect";
     }
 
 }
