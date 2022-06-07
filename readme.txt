@@ -138,7 +138,7 @@ that the specific marked field / setter / constructor is to be used in the proce
     Container injected bean dependencies can be actual bean instances or proxies.
     No assumption is to be made on if a provided by the container dependency is a proxy or an actual class instance.
     NO assumption is to be made on how such proxies are created or when.
-    Always read container provided documentation regarding this aspects.
+    Always read container provided documentation regarding these aspects.
 
     Some containers allow injection of values into managed beans methods parameters.
     For example REST controllers with injected HTTP requests or sessions.
