@@ -11,7 +11,7 @@ public class ReadInternalFiles {
 
     public String readFileContent() {
         try {
-            Path path = Paths.get("src", "main", "resources", "templates", "my_template.txt");
+            Path path = Paths.get("src", "main", "resources", "templates", "internal_file.txt");
             byte[] bytes = Files.readAllBytes(path);
             return new String(bytes);
         } catch (Exception e) {
