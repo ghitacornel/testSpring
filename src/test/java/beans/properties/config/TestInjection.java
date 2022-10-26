@@ -14,14 +14,4 @@ public class TestInjection extends AbstractTestSpringContext {
         Assertions.assertEquals("tra la la", bean.getCustomSecondValue());
     }
 
-    @Test
-    public void testInjectionOfPropertiesReferencingAFile() {
-        BeanWithPropertiesReferencingAFile bean = context.getBean(BeanWithPropertiesReferencingAFile.class);
-        Assertions.assertNotNull(bean);
-        Assertions.assertNotNull(bean.getResourceFile());
-        Assertions.assertTrue(bean.getResourceFile().isFile());
-        Assertions.assertNotNull(bean.getFile());
-        Assertions.assertTrue(bean.getFile().exists());
-    }
-
 }
