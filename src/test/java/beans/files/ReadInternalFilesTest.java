@@ -8,9 +8,7 @@ public class ReadInternalFilesTest extends AbstractTestSpringContext {
 
     @Test
     public void testRead() {
-
         ReadInternalFiles bean = context.getBean(ReadInternalFiles.class);
         Assertions.assertEquals("custom template content", bean.readFileContent());
-
     }
 }
