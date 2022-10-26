@@ -13,7 +13,8 @@ public class ReadInternalFiles {
 
     public String readFileContent() {
         try {
-            InputStream inputStream = ReadInternalFiles.class.getResourceAsStream("/templates/internal_file.txt");
+            String path = "/templates/internal_file.txt";
+            InputStream inputStream = ReadInternalFiles.class.getResourceAsStream(path);
             return new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8))
                     .lines()
                     .collect(Collectors.joining("\n"));
