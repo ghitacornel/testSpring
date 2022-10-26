@@ -20,6 +20,8 @@ public class TestInjection extends AbstractTestSpringContext {
         Assertions.assertNotNull(bean);
         Assertions.assertNotNull(bean.getResourceFile());
         Assertions.assertTrue(bean.getResourceFile().isFile());
+        Assertions.assertNotNull(bean.getFile());
+        Assertions.assertTrue(bean.getFile().exists());
     }
 
 }
