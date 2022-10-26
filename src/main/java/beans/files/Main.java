@@ -3,7 +3,7 @@ package beans.files;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-beans.xml");
 
