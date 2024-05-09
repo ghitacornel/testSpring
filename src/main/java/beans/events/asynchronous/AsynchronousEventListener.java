@@ -18,11 +18,9 @@ public class AsynchronousEventListener {
 
     /**
      * Remember to enable asynchronous method execution in your application with @EnableAsync
+     * The actual consumption of the event happens here
      */
     @Async
-    /**
-     * the actual consumption of the event happens here
-     */
     @EventListener
     public void processEvent(CustomSpringEvent event) {
         processedEvents.add(event);
