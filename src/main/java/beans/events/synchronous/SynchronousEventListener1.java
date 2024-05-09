@@ -11,7 +11,7 @@ import java.util.List;
  * My simple consumer of events (synchronous one)
  */
 @Component
-public class SynchronousEventListener {
+public class SynchronousEventListener1 {
 
     /**
      * the actual consumption of the event happens here
