@@ -14,7 +14,7 @@ import java.util.Set;
  * My simple consumer of events (asynchronous one)
  */
 @Component
-public class AsynchronousEventListener {
+public class AsynchronousEventListener1 {
 
     /**
      * Remember to enable asynchronous method execution in your application with @EnableAsync
