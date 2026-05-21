@@ -8,10 +8,10 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 @Configuration
 @PropertySource("classpath:my.first.properties")
 @PropertySource("classpath:my.second.properties")
-public class JavaConfigurationForPropertyFiles {
+class JavaConfigurationForPropertyFiles {
 
     @Bean
-    static public PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
+    PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
         return new PropertySourcesPlaceholderConfigurer();
     }
 }

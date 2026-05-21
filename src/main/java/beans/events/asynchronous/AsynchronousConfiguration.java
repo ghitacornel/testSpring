@@ -8,7 +8,7 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 @Configuration
 @EnableAsync
-public class AsynchronousConfiguration implements AsyncConfigurer {
+class AsynchronousConfiguration implements AsyncConfigurer {
 
     @Bean// not required to expose this as a bean, we need it for test purpose only
     @Override
