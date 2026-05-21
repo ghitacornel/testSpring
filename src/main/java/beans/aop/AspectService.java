@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component// an aspect is a container managed bean
 @Aspect// an aspect can be a simple class with a special marker
-public class AspectService {
+class AspectService {
 
     // PLAY WITH DIFFERENT FLAVORS OF AOP OFFERED BY SPRING
 
@@ -21,17 +21,17 @@ public class AspectService {
     }
 
     @AfterReturning(pointcut = "execution(* beans.aop.beans.*.*(..))", returning = "valueReturnedByTargetedMethod")
-    public void aspectExecutedAfterExecutingTargetedMethodsReturnAValues(Object valueReturnedByTargetedMethod) {
+    void aspectExecutedAfterExecutingTargetedMethodsReturnAValues(Object valueReturnedByTargetedMethod) {
         System.out.println("AOP invoked when RETURN object is " + valueReturnedByTargetedMethod);
     }
 
     @AfterThrowing(pointcut = "execution(* beans.aop.beans.*.*(..))", throwing = "exceptionThrownByTargetedMethod")
-    public void aspectExecutedWhenTargetedMethodsThrowExceptions(Exception exceptionThrownByTargetedMethod) {
+    void aspectExecutedWhenTargetedMethodsThrowExceptions(Exception exceptionThrownByTargetedMethod) {
         System.out.println("AOP invoked when EXCEPTION thrown is " + exceptionThrownByTargetedMethod);
     }
 
     @Around("execution(* beans.aop.beans.*.*(..))")
-    public Object aroundAspect(ProceedingJoinPoint joinPoint) throws Throwable {
+    Object aroundAspect(ProceedingJoinPoint joinPoint) throws Throwable {
         System.out.println("AOP AROUND invoked BEFORE executing method call " + joinPoint);
         Object result = joinPoint.proceed();
         System.out.println("AOP AROUND invoked AFTER executing method call " + joinPoint);
