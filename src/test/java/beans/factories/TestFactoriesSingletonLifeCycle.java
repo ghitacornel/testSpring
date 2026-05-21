@@ -1,8 +1,9 @@
 package beans.factories;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import template.AbstractTestSpringContext;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestFactoriesSingletonLifeCycle extends AbstractTestSpringContext {
 
@@ -10,15 +11,15 @@ public class TestFactoriesSingletonLifeCycle extends AbstractTestSpringContext {
     public void testLifecycleSingleton() {
 
         SingletonProduct bean = context.getBean(SingletonProduct.class);
-        Assertions.assertNotNull(bean);
-        Assertions.assertTrue(bean.postConstructCalled);
-        Assertions.assertFalse(bean.preDestroyCalled);
+        assertNotNull(bean);
+        assertTrue(bean.postConstructCalled);
+        assertFalse(bean.preDestroyCalled);
 
         // destroy the container
         context.close();
 
-        Assertions.assertTrue(bean.postConstructCalled);
-        Assertions.assertTrue(bean.preDestroyCalled);
+        assertTrue(bean.postConstructCalled);
+        assertTrue(bean.preDestroyCalled);
 
     }
 }

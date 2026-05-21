@@ -1,12 +1,14 @@
 package beans.injection.profiles;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(locations = {"classpath:spring-beans.xml"})
@@ -18,9 +20,9 @@ public class TestInjectionProfile1 {
 
     @Test
     public void testInjectionProfiles() {
-        Assertions.assertNotNull(bean);
-        Assertions.assertNotNull(bean.getProfileDependency());
-        Assertions.assertSame(ProfileDependency1.class, bean.getProfileDependency().getClass());
+        assertNotNull(bean);
+        assertNotNull(bean.getProfileDependency());
+        assertSame(ProfileDependency1.class, bean.getProfileDependency().getClass());
     }
 
 }

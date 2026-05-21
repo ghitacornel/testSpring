@@ -1,8 +1,9 @@
 package beans.lifecycle.singleton.lazy;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import template.AbstractTestSpringContext;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class TestLazy extends AbstractTestSpringContext {
 
@@ -11,7 +12,7 @@ public class TestLazy extends AbstractTestSpringContext {
 
         ComponentEager bean = context.getBean(ComponentEager.class);
         System.err.println("marker");
-        Assertions.assertNotNull(bean);
+        assertNotNull(bean);
         bean.doSomething();
 
     }

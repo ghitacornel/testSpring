@@ -1,8 +1,9 @@
 package beans.factories;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import template.AbstractTestSpringContext;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestFactoriesPrototypeLifeCycle extends AbstractTestSpringContext {
 
@@ -10,20 +11,20 @@ public class TestFactoriesPrototypeLifeCycle extends AbstractTestSpringContext {
     public void testLifecyclePrototype() {
 
         PrototypeProduct bean = context.getBean(PrototypeProduct.class);
-        Assertions.assertNotNull(bean);
-        Assertions.assertTrue(bean.postConstructCalled);
-        Assertions.assertFalse(bean.preDestroyCalled);
+        assertNotNull(bean);
+        assertTrue(bean.postConstructCalled);
+        assertFalse(bean.preDestroyCalled);
 
         // destroy the container
         context.close();
 
-        Assertions.assertTrue(bean.postConstructCalled);
+        assertTrue(bean.postConstructCalled);
 
 
         // even after the container is destroyed the pre destroy event is not triggered
         // this behavior occurs because this bean is no longer maintained by the container once produced and delivered
 
-        Assertions.assertFalse(bean.preDestroyCalled);
+        assertFalse(bean.preDestroyCalled);
 
     }
 
