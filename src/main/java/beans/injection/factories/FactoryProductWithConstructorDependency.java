@@ -1,6 +1,6 @@
 package beans.injection.factories;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 
 public class FactoryProductWithConstructorDependency {
 

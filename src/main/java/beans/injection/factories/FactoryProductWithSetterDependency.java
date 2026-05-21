@@ -2,7 +2,7 @@ package beans.injection.factories;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 
 public class FactoryProductWithSetterDependency {
 

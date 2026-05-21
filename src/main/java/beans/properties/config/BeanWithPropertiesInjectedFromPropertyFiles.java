@@ -3,7 +3,7 @@ package beans.properties.config;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 
 /**
  * observe that there is no need to define specific setters for such kind of injected properties
