@@ -1,10 +1,10 @@
 package beans.factories;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import template.AbstractTestSpringContext;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
 
 public class TestFactories extends AbstractTestSpringContext {
 
@@ -34,8 +34,8 @@ public class TestFactories extends AbstractTestSpringContext {
         assertNotNull(product_type_1_instance_2.component);
         assertTrue(product_type_1_instance_2.createdByFactory);// verify product is created using expected factory method
 
-        Assertions.assertNotSame(product_type_1_instance_1, product_type_1_instance_2);// verify factory product scope is honored
-        Assertions.assertNotSame(product_type_1_instance_1.component, product_type_1_instance_2.component);// verify factory product scope is honored
+        assertNotSame(product_type_1_instance_1, product_type_1_instance_2);// verify factory product scope is honored
+        assertNotSame(product_type_1_instance_1.component, product_type_1_instance_2.component);// verify factory product scope is honored
 
         SingletonProduct product_type_2_instance_1 = context.getBean(SingletonProduct.class);
         assertNotNull(product_type_2_instance_1);
