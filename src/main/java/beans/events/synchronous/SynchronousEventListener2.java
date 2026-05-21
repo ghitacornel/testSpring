@@ -11,7 +11,7 @@ import java.util.List;
  * My simple consumer of events (synchronous one)
  */
 @Component
-public class SynchronousEventListener2 {
+class SynchronousEventListener2 {
 
     /**
      * the actual consumption of the event happens here
@@ -19,7 +19,7 @@ public class SynchronousEventListener2 {
      * @param event
      */
     @EventListener// this one or implements ApplicationListener<CustomSpringEvent>
-    public void onApplicationEvent(CustomSpringEvent event) {
+    void onApplicationEvent(CustomSpringEvent event) {
         processedEvents.add(event);
         processedByThreads.add(Thread.currentThread());
     }

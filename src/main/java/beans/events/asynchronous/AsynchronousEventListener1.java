@@ -14,7 +14,7 @@ import java.util.Set;
  * My simple consumer of events (asynchronous one)
  */
 @Component
-public class AsynchronousEventListener1 {
+class AsynchronousEventListener1 {
 
     /**
      * Remember to enable asynchronous method execution in your application with @EnableAsync
@@ -22,7 +22,7 @@ public class AsynchronousEventListener1 {
      */
     @Async
     @EventListener
-    public void processEvent(CustomSpringEvent event) {
+    void processEvent(CustomSpringEvent event) {
         processedEvents.add(event);
         processingThreads.add(Thread.currentThread());
 
